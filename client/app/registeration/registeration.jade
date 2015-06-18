@@ -1,3 +1,35 @@
-.col-md-12
-    | This is the registeration view.
-    refat change it 
+ 
+
+section
+div#container_demo
+h1 Registration
+ 
+br
+div
+      div#contact-area
+    form(method='post',action='')
+
+      label(for='name') Name:
+        input(type='text',name='name',ng-model="name",id='name', placeholder="add your name") 
+        br 
+        br 
+      label(for='phone') Phone Number:
+        input(type='text',name='phone',ng-model="phone",id='phone',placeholder="add phone number") 
+        br
+        br
+          
+        label(for='email') Email:
+        input(type='text',name='email',
+        ng-model="email",id='email',placeholder="add your Email") 
+        br  
+        br 
+        
+        input(type='submit',ng-click="add()",name='Register',value='Register',id="button").submit-button
+
+         
+
+
+
+    
+
+
