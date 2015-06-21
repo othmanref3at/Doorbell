@@ -1,63 +1,53 @@
-
 body {
-    background-color: #58ACFA;
+    background-image: url("./../../assets/images/a5.jpg") ; 
+    background-repeat:no-repeat;
+    background-size:cover; 
     margin-left: auto;
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
     margin-top: 100px;
-    width: 10em
+    width: 60em
 }
-#container_demo{
-	 text-align: left;
-	 margin: 0;
-	 padding: 0;
-	 margin: 0 auto;
-	 font-family: "Trebuchet MS","Myriad Pro",Arial,sans-serif;
+.form-signin input[type="text"] {
+    margin-bottom: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
- #button { 
-    padding: 4px 6px;
-    font: 14px sans-serif; 
-    border: 1px solid #000;
-    border-color: #000000;
-    color: #46000D;  
-    border-radius: 25px; 
-     
-     
-
-    
-
-    /* 
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.form-signin .form-control {
+    position: relative;
+    font-size: 16px;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    height: auto;
+    padding: 10px; 
+}
+.vertical-offset-100 {
+    padding-top: 100px;
+}
+.img-responsive {
     display: block;
-    height: 50px;
-    width: 100px;
-    background: #34696f;
-    border: 2px solid rgba(33, 68, 72, 0.59);
-     
-    
-    color: rgba(0, 0, 0, 0.55);
-    text-align: center;
-    font: bold 1em/100px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-     
-   
-    background: -webkit-linear-gradient(top, #34696f, #2f5f63);
-    background: -moz-linear-gradient(top, #34696f, #2f5f63);
-    background: -o-linear-gradient(top, #34696f, #2f5f63);
-    background: -ms-linear-gradient(top, #34696f, #2f5f63);
-    background: linear-gradient(top, #34696f, #2f5f63);
-     
-    -webkit-border-radius: 24px;
-    -khtml-border-radius: 25px;
-    -moz-border-radius: 25px;
-    border-radius: 25px;
-     
-    -webkit-box-shadow: 0 8px 0 #1b383b;
-    -moz-box-shadow: 0 8px 0 #1b383b;
-    box-shadow: 0 8px 0 #1b383b;
-     
-    text-shadow: 0 2px 2px rgba(255, 255, 255, 0.2);
-     */
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+}
+.panel {
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
 h1{
-	 color: #46000D; 
+    color: #000; 
+    margin-left: 5em;
+}
+.submit{
+
+    margin-right: 4em;
 }
