@@ -55,7 +55,7 @@ if(Notification.permission === 'default'){
  	}
 }
 }
- // console.log("SW presentddddd !!! ");
+  console.log("SW presentddddd !!! ");
  //    if ('serviceWorker' in navigator){
  //    console.log("SW present !!! ");
 
