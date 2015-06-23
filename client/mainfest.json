@@ -1,0 +1,7 @@
+{
+    "name": "DoorBellApp",
+    "version": "1",
+    "manifest_version": 2, 
+     
+    "permissions": ["gcm"]
+}
