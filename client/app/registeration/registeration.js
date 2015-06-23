@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('doorbellApp')
-  .config(['$stateProvider',function ($stateProvider) {
+  .config(['$stateProvider', function($stateProvider) {
     $stateProvider
       .state('registeration', {
         url: '/registeration',

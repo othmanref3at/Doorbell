@@ -1,29 +1,5 @@
 'use strict';
 
-// angular.module('doorbellApp')
-//   .controller('RegisterationCtrl', function ($scope, $firebase) {
-//     $scope.message = 'Hello';
-
-
-//     //connect to firebase
-//  var ref = new Firebase("https://doorbellyamsafer.firebaseio.com/emplyee");  
-//  $scope.emplyee = $firebase(ref);
-
-
-//  $scope.add = function(){
-//  	console.log("clicked !");
-//  $scope.emplyee.$add({
-//      name : $scope.name,
-//      email : $scope.email,
-//      phoneNumber : $scope.phone
-//  });
-
-//  }
-
-
-
-//   }); 
-
 //create our angular module and anject firebase 
 angular.module('doorbellApp')
 
@@ -76,6 +52,5 @@ angular.module('doorbellApp')
     //$http.get("https://doorbellyamsafer.firebaseio.com/emplyee")
     //.success(function(response) {$scope.names = response.emplyee;});
     //console.log($scope.names);
-
 
 });
