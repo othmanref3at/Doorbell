@@ -32,7 +32,7 @@ angular.module('doorbellApp')
 
 	//var emplyee = "";
 
-	//connect to firebase
+	//add user data to firebase DB
 	$scope.ref = new Firebase("https://doorbellyamsafer.firebaseio.com/emplyee");
 
 	$scope.add = function() {
@@ -63,12 +63,16 @@ angular.module('doorbellApp')
 			$rootScope.currentUser = snapshot.val();
 			
 			console.log($rootScope.currentUser);
+			console.log(typeof ($rootScope.currentUser));
 			//return currentUser;
 
 		});
 		
 	};
-
+	//$scope.check=function($rootScope.currentUser){
+	//	if (typeof $rootScope.currentUser === 'undefined')
+	//		$location.path();
+	//};
     //$http.get("https://doorbellyamsafer.firebaseio.com/emplyee")
     //.success(function(response) {$scope.names = response.emplyee;});
     //console.log($scope.names);

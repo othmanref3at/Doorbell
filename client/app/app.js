@@ -13,6 +13,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     .otherwise('/');
 
   $locationProvider.html5Mode(true);
+  
   $stateProvider
     .state('registration', {
       url: '/registration',
@@ -27,12 +28,13 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
 });
 
-//app.run(function($rootScope){
-// $rootScope.$on('$stateChangeStart',function(event,toState,toParams){
-// var requirRegister = toState.data.requirRegister;
-//  if( typeof $rootScope === 'undefined'){
-//     event.preventDeafult();
-//     consloe.log("display something ");
-//     }
-
-//});
+app.run(function($rootScope){
+ $rootScope.$on('$stateChangeStart',function(event,toState,toParams){
+ //var requirRegister = toState.data.requirRegister;
+  if( typeof ($rootScope.currentUser) === 'undefined'){
+   //  event.preventDeafult();
+   
+     }
+    
+});
+});
