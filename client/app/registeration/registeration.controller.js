@@ -4,9 +4,9 @@
 angular.module('doorbellApp')
 
 //create our main controller and get access to firebase
-.controller('RegisterationCtrl', function($scope, $firebase,$rootScope) {
+.controller('RegisterationCtrl', function($rootScope, $firebase,$scope) {
 
-	//var emplyee = "";
+	
 
 	//add user data to firebase DB
 	$scope.ref = new Firebase("https://doorbellyamsafer.firebaseio.com/emplyee");
@@ -28,29 +28,32 @@ angular.module('doorbellApp')
 		$scope.phone = "";
 		
 	};
-	
+	console.log($rootScope.currentUser+"first");
 
 	 //retrive the last added user data from firebase	
 	$scope.ref = new Firebase("https://doorbellyamsafer.firebaseio.com/emplyee/email");
      
-	$scope.retrive=function(){
+	$scope.retrive=function($locationProvider){
 		$scope.ref.orderByValue().limitToLast(2).on('value',function(snapshot) {
 			
 			$rootScope.currentUser = snapshot.val();
 			
-			console.log($rootScope.currentUser);
-			console.log(typeof ($rootScope.currentUser));
-			//return currentUser;
-
+			
 		});
+		console.log($rootScope.currentUser);
+			console.log(typeof ($rootScope.currentUser));
+			
+			if($rootScope.currentUser ==='undefined'){
+				console.log("undefined rootScope");
+			}else {
+				console.log("defined rootScope");
+				//$state.go('test22');
+			}
+
+			return $rootScope.currentUser;
+
 		
 	};
-	//$scope.check=function($rootScope.currentUser){
-	//	if (typeof $rootScope.currentUser === 'undefined')
-	//		$location.path();
-	//};
-    //$http.get("https://doorbellyamsafer.firebaseio.com/emplyee")
-    //.success(function(response) {$scope.names = response.emplyee;});
-    //console.log($scope.names);
+	
 
 });

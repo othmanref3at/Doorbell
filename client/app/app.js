@@ -1,40 +1,42 @@
 'use strict';
 
 var app = angular.module('doorbellApp', [
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
-  'ui.router',
-  'ui.bootstrap',
-  'firebase'
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
+    'ui.router',
+    'ui.bootstrap',
+    'firebase'
+    
+
 ])
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-  $urlRouterProvider
-    .otherwise('/');
+    $urlRouterProvider
+        .otherwise('/');
 
-  $locationProvider.html5Mode(true);
-  
-  $stateProvider
-    .state('registration', {
-      url: '/registration',
-      controller: 'RegisterationCtrl'
+    $locationProvider.html5Mode(true);
 
-    })
-    .state('supscribe', {
-      url: '/subscription',
-      controller: 'RegisterationCtrl'
-
-    })
+   // $urlRouterProvider.otherwise('/registration');
 
 });
 
-app.run(function($rootScope){
- $rootScope.$on('$stateChangeStart',function(event,toState,toParams){
- //var requirRegister = toState.data.requirRegister;
-  if( typeof ($rootScope.currentUser) === 'undefined'){
-   //  event.preventDeafult();
-   
-     }
+app.run(function($rootScope, $state,$location) {
+
+    $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
+        
+        if ((typeof($rootScope.currentUser)) === 'undefined') {
+            
+            console.log("currentUser  undefined yet ");
+            $location.path('registeration');
+
+        } else {
+            console.log("currentUser defined");
+           
+            
+            $location.path('subscription');
+            console.log($rootScope.currentUser);
+        }
     
-});
+           
+    });
 });
