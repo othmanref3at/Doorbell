@@ -1,35 +1,20 @@
-.container
-      .row
-        .col-md-6.col-md-offset-3
-          .panel.panel-login
-            .panel-heading 
-                h1 Registeration
-              hr
-            .panel-body
-              .row
-              form(role='form') 
-                .form-group
-                  label(for='InputName')  
-                .form-group
-                  label(for='InputName') Enter Name
-                  .input-group
-                    input#InputName.form-control(type='text', name='InputName',ng-model="name", placeholder='Enter Name', required='')
-                    span.input-group-addon
-                      span.glyphicon.glyphicon-asterisk
-                .form-group 
-                  label(for='InputName') Enter Phone-Number
-                  .input-group
-                    input#InputName.form-control(type='text', name='InputName',ng-model="phone", placeholder='Enter Phone-Number', required='')
-                    span.input-group-addon
-                      span.glyphicon.glyphicon-asterisk
-                .form-group
-                  label(for='InputEmail') Enter Email
-                  .input-group
-                    input#InputEmailFirst.form-control(type='email',ng-model="email", name='InputEmail', placeholder='Enter Email', required='')
-                    span.input-group-addon
-                      span.glyphicon.glyphicon-asterisk
-                .form-group
-                input#submit.btn.btn-info.pull-right(type='submit',ng-click="add()", name='submit', value='Register')
-            .col-lg-5.col-md-push-1
-              .col-md-12
-       
+link(href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600", rel="stylesheet", type="text/css")
+link(href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css", rel="stylesheet")
+.testbox
+  h1 Registration
+  form(role='form')
+    hr
+     
+    hr
+    label#icon(for="name")
+      i.icon-envelope
+    input#name(type='text', name='InputName',ng-model="name", placeholder='Enter Name', required='')
+    label#icon(for="name")
+      i.icon-user
+    input#name(type='text', name='InputName',ng-model="phone", placeholder='Enter Phone-Number', required='')
+    label#icon(for="name")
+      i.icon-shield 
+     
+    input#name(type='text', name='InputEmail',ng-model="email", placeholder='Enter Email', required='')
+     
+    a.button(type='submit',ng-click="add()", name='submit', value='Register') Register

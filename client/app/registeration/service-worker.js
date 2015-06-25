@@ -2,11 +2,11 @@
   event.waitUntil(
     caches.open('v1').then(function(cache) {
       return cache.addAll(
-        '/app/',
-        '/subscription.js',
-        '/subscription.jade',
-        '/subscription.css',
-        '/subscription.controller.js'
+        '/',
+        '/registeration.js',
+        '/registeration.jade',
+        'registeration.css',
+        '/registeration.controller.js'
         
       );
     })

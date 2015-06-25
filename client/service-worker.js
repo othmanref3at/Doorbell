@@ -1,8 +1,9 @@
+
  this.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('v1').then(function(cache) {
       return cache.addAll(
-        '/app/',
+        '/',
         '/subscription.js',
         '/subscription.jade',
         '/subscription.css',
