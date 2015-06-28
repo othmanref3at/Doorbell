@@ -236,21 +236,40 @@ angular.module('doorbellApp')
  //    // If it's currently visible.
  //   console.log('service worker not supported');
      
- //  }
-   if ('serviceWorker' in navigator){
-    console.log("SW present !!! ");
+ //  } 
+ if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js', { scope: './' }).then(function(reg) {
+    console.log(navigator.serviceWorker.controller);
+    console.log(reg.scope);
 
-    navigator.serviceWorker.register('service-worker.js', {
-      scope: './'
-    }).then(function(registration){
-      console.log('Service worker registered : ', registration.scope);
-      console.log(navigator.serviceWorker.controller);
-    })
-    .catch(function(err){
-      console.log("Service worker registration failed : ", err);
-    });
+    if(reg.installing) {
+      console.log('Service worker installing');
+    } else if(reg.waiting) {
+      console.log('Service worker installed');
+    } else if(reg.active) {
+      console.log('Service worker active');
+    }
+    
+  }).catch(function(error) {
+    // registration failed
+    console.log('Registration failed with ' + error);
+  });
+};
 
-  }
+					// if ('serviceWorker' in navigator){
+					// console.log("SW present !!! ");
+
+					// navigator.serviceWorker.register('service-worker.js', {
+					//   scope: './'
+					// }).then(function(registration){
+					//   console.log('Service worker registered : ', registration.scope);
+					//   console.log(navigator.serviceWorker.controller);
+					// })
+					// .catch(function(err){
+					//   console.log("Service worker registration failed : ", err);
+					// });
+
+					// }
 
   
 function initialiseState() {

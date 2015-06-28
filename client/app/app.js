@@ -27,7 +27,7 @@ app.run(function($rootScope, $state,$location) {
         if ((typeof($rootScope.currentUser)) === 'undefined') {
             
             console.log("currentUser  undefined yet ");
-            $location.path('registeration');
+            $location.path('subscription');
 
         } else {
             console.log("currentUser defined");
