@@ -4,6 +4,7 @@
 angular.module('doorbellApp')
 
 //create our main controller and get access to firebase
+
 .controller('RegisterationCtrl', function($rootScope, $firebase, $scope) {
 
 
@@ -72,7 +73,5 @@ angular.module('doorbellApp')
 	// 		console.log($rootScope.currentUser);
 	// 	});
 	// };
-
-
-
 });
+

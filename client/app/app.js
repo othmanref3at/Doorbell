@@ -1,5 +1,5 @@
 'use strict';
-
+ 
 var app = angular.module('doorbellApp', [
     'ngCookies',
     'ngResource',
@@ -28,7 +28,6 @@ app.run(function($rootScope, $state, $location) {
             $location.path('registeration');
             console.log($rootScope.currentUser);
 
-
         } else {
             console.log("currentUser defined");
 
@@ -39,4 +38,4 @@ app.run(function($rootScope, $state, $location) {
 
 
     });
-});
+}); 
