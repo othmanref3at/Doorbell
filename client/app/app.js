@@ -7,7 +7,7 @@ var app = angular.module('doorbellApp', [
     'ui.router',
     'ui.bootstrap',
     'firebase'
-    
+
 
 ])
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -16,27 +16,27 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
     $locationProvider.html5Mode(true);
 
-   // $urlRouterProvider.otherwise('/registration');
+    // $urlRouterProvider.otherwise('/registration');
 
 });
 
-app.run(function($rootScope, $state,$location) {
+app.run(function($rootScope, $state, $location) {
 
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
-        
+
         if ((typeof($rootScope.currentUser)) === 'undefined') {
-            
-            console.log("currentUser  undefined yet ");
             $location.path('registeration');
+            console.log($rootScope.currentUser);
+
 
         } else {
             console.log("currentUser defined");
-           
-            
-            $location.path('subscription');
+
+
+            $location.path('test22');
             console.log($rootScope.currentUser);
         }
-    
-           
+
+
     });
 });
