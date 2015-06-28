@@ -145,6 +145,7 @@ angular.module('doorbellApp')
 				}
 			}
 		}
+ 
 
 		function subscribeDevice() {
   // Disable the switch so it can't be changed while
