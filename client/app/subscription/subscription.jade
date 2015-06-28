@@ -1,19 +1,28 @@
-.pragraph
-     h1 Enable push-notificatons or Not
-        .block
-            .radio
-                input#subscribe(type='radio', ng-model="subscribe",name='sub', ng-click="checkSubscribe()",value='subscribe')
-                |   
-                |         
-                label(for='subscribe') subscribe
-                |   
-                |         
-                input#unsubscribe(type='radio',ng-model="unsubscribe",ng-click="checkUnsubscribe()", name='sub', value='unsubscribe')
-                |   
-                |         
-                label(for='unsubscribe') unsubscribe
-       
+link(href='manifest.json', rel='manifest')
+section.button-container
+    #notification-permission.button-group
+        p
+            span 1
+            | Enable notifications
+        button Request Notifcation Permissions
+    #push-permission.button-group.disabled
+        p
+            span 2
+            | Enable push for this site
+        button(disabled='') Request Push Permissions
+    #request-push.button-group.disabled
+        p
+            span 3
+            | Send yourself a push message
+        input.title(type='text', placeholder='Title')
+        input.message(type='text', placeholder='Message')
+        button(disabled='') Request a Push to Yourself
+    #revoke-push.button-group.disabled
+        p
+            span 4
+            | Disable push for this site
 
-
-
-         
+        button(disabled='') Revoke Push Permissions
+    section.error-container
+        h1.title Ooops
+        p.message Something went wrong
