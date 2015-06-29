@@ -1,351 +1,51 @@
-/*
- * Web Starter Kit
- *
- * Multi-screen layout styles for your page. Brought to you by the
- * Web Starter Kit team.
- *
- */
 
-/*
- * HTML5 Boilerplate
- *
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
 
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
+.block {
 
-html,
-button,
-input,
-select,
-textarea {
-  color: #222;
+    background:#3a57af ;
+    text-align: center ;
+    margin-top: 5em;
+  padding:10px;
+  color:#fff;
 }
-
-body {
-  font-size: 1em;
-  line-height: 1.4;
+.pragraph { 
+    text-align: center ; 
+    background: #ebebeb;
+    padding-top: 8em;
 }
-
-a {
-  color: #00e;
+input[type=radio] {
+    display: none;
 }
+ 
+.radio label:before {
+    border-radius: 8px;
 
-a:visited {
-  color: #551a8b;
 }
-
-a:hover {
-  color: #06e;
+label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 15px;
+    font-size: 20px;
 }
-
-/*
- * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
- */
-
-img {
-  vertical-align: middle;
+label:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    background-color: #B8B8B8 ;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
 }
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-  resize: vertical;
-}
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/* Prevent callout */
-
-.nocallout {
-  -webkit-touch-callout: none;
-}
-
-.pressed {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-/* A hack for HTML5 contenteditable attribute on mobile */
-
-textarea[contenteditable] {
-  -webkit-appearance: none;
-}
-
-/* A workaround for S60 3.x and 5.0 devices which do not animated gif images if
-   they have been set as display: none */
-
-.gifhidden {
-  position: absolute;
-  left: -100%;
-}
-
-/*
- * Image replacement
- */
-
-.ir {
-  background-color: transparent;
-  background-repeat: no-repeat;
-  border: 0;
-  direction: ltr;
-  display: block;
-  overflow: hidden;
-  text-align: left;
-  text-indent: -999em;
-}
-
-.ir br {
-  display: none;
-}
-
-/*
- * Hide from both screenreaders and browsers: h5bp.com/u
- */
-
-.hidden {
-  display: none !important;
-  visibility: hidden;
-}
-
-/*
- * Hide only visually, but have it available for screenreaders: h5bp.com/v
- */
-
-.visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-/*
- * Extends the .visuallyhidden class to allow the element to be focusable
- * when navigated to via the keyboard: h5bp.com/p
- */
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto;
-}
-
-/*
- * Hide visually and from screenreaders, but maintain layout
- */
-
-.invisible {
-  visibility: hidden;
-}
-
-/**
- * Clearfix helper
- * Used to contain floats: h5bp.com/q
- */
-
-.clearfix::before,
-.clearfix::after {
-  content: "";
-  display: table;
-}
-
-.clearfix::after {
-  clear: both;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   Theses examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 800px) {
-  /* Style adjustments for viewports that meet the condition */
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-     only screen and (min-resolution: 144dpi) {
-  /* Style adjustments for viewports that meet the condition */
-}
-
-
-
-header h1 {
-  max-width: 320px;
-
-  margin: 0 auto;
-  padding-top: 140px;
-  padding-bottom: 32px;
-  padding-left: 32px;
-  padding-right: 32px;
-}
-
-.button-container, .error-container {
-  /*display: none;*/
-  max-width: 320px;
-  min-width: 64px;
-
-  padding: 32px;
-  margin: 0 auto;
-}
-
-.button-group p {
-  line-height: 32px;
-  vertical-align: middle;
-  color: #2196F3;
-}
-
-.button-group p span {
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  border-color: #2196F3;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 100%;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 32px;
-  margin-right: 16px;
-}
-
-.button-group.completed p {
-  color: rgb(180, 180, 180);
-}
-
-.button-group.completed p span {
-  border-color: rgb(180, 180, 180);
-}
-
-button {
-  display: block;
-
-  width: 100%;
-  min-width: 64px;
-  min-height: 36px;
-
-  padding: 16px;
-  margin: 16px 0;
-
-  font-size: 14px;
-  font-weight: 400;
-  text-transform: uppercase;
-  line-height: 1;
-  letter-spacing: 0.04em;
-
-  background: #2196F3;
-  border: none;
-  border-radius: 2px;
-  color: white;
-  position: relative;
-
-  overflow: hidden;
-
-  will-change: box-shadow, transform;
-  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1),
-  background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-  color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  outline: none;
-
-  box-shadow: 0 1px 1.5px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24);
-}
-
-button::-moz-focus-inner {
-  border: 0;
-}
-
-button:hover {
-  background-color: #1E88E5;
-}
-
-button:focus:not(:active) {
-  background-color: rgba(black, 0.12);
-}
-
-button:active {
-  background-color: #1976D2;
-}
-
-button[disabled] {
-  background-color: rgba(0, 0, 0, 0.12);
-  color: rgba(0, 0, 0, 0.26);
-  cursor: auto;
-}
-
-button[disabled]:hover {
-  background-color: rgba(0, 0, 0, 0.12);
-}
-
-.button-group.disabled {
-  opacity: 0.2;
-}
-
-.button-group.completed {
-  opacity: 0.6;
-}
-
-
-input[type=text] {
-  display: block;
-
-  width: 100%;
-
-  border       : none;
-  border-bottom: 1px solid #1976D2;
-  display      : block;
-  font-size    : 16px;
-  margin       : 0;
-  padding      : 4px 0;
-  background   : transparent;
-  text-align   : left;
-}
-
-input[type=text]:focus {
-  outline: none;
-}
+ 
+input[type=radio]:checked + label:before {
+    content: "\2713";
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    line-height: 18px;
+}*/

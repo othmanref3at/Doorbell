@@ -1,7 +1,8 @@
-{
-    "name": "DoorBellApp",
-    "version": "1",
-    "manifest_version": 2, 
-     
-    "permissions": ["gcm"]
+{  
+  "name": "Doorbell",  
+  "short_name": "Doorbell",   
+  "start_url": "/subscription.jade?homescreen=1",   
+  "gcm_sender_id": "736620167368",  
+  "gcm_user_visible_only": true,
+  "permissions": ["gcm"]  
 }
