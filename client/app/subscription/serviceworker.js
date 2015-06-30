@@ -27,6 +27,21 @@ self.addEventListener('push', function(e) {
                       });
                    }
   console.log('Push Event Received');
+	var notifi;
+			if (Notification.permission === 'default') {
+				alert('Please allow notifications before doing this');
 
+			} else {
+				notifi = new Notification('New message from the door', {
+					body: 'Please go open the door',
+					icon: './../../assets/images/message.png'
+
+
+				});
+				notifi.onclick = function() {
+					alert("Im comming :P");
+
+				}
+			}
 
 });
