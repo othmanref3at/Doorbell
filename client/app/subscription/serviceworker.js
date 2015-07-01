@@ -13,56 +13,35 @@ self.addEventListener('fetch', function(e) {
 });
 
 self.addEventListener('push', function(e) {
+  console.log("unsubscribe");
+                //e.preventDefault();
+                if (!window.Notification) {
+                    alert('sorry,notification not support');
+                } else {
+                      Notification.requestPermission(function(p) {
+                          if (p === 'denied') {
+                              alert('You have denied notification');
+                          } else if (p === 'granted') {
+                              alert('You have granted notification');
+                          }
+                      });
+                   }
   console.log('Push Event Received');
+  var notifi;
+      if (Notification.permission === 'default') {
+        alert('Please allow notifications before doing this');
 
-  if (!(self.Notification && self.Notification.permission === 'granted')) {
-    console.error('Failed to display notification - not supported');
+      } else {
+        notifi = new Notification('New message from the door', {
+          body: 'Please go open the door',
+          icon: './../../assets/images/message.png'
 
-    // Perhaps we don't have permission to show a notification
-    if (self.Notification) {
-      console.error('  notificaton permission set to:',
-        self.Notification.permission);
-    }
-    return;
-  }
 
-  var data = {};
-  if (e.data) {
-    data = e.data.json();
-  }
-  var title = data.title || 'No Payload with Message';
-  var message = data.message || 'This will change in future versions of Chrome.';
-  var icon = 'images/touch/chrome-touch-icon-192x192.png';
+        });
+        notifi.onclick = function() {
+          alert("Im comming :P");
 
-  var notification = new Notification(title, {
-    body: message,
-    icon: icon,
-    tag: 'simple-push-demo-notification'
-  });
+        }
+      }
 
-  // This should be swapped out by the notificationclick event
-  notification.addEventListener('click', function() {
-    if (clients.openWindow) {
-      console.log('Notification clicked, trying to call clients.openWindow');
-      clients.openWindow('https://gauntface.com/blog/2014/12/15/push-notifications-service-worker');
-    } else {
-      console.log('Notification clicked, but clients.openWindow is not currently supported');
-    }
-  });
-
-  return notification;
-});
-
-self.addEventListener('pushsubscriptionlost', function(e) {
-  console.log(e);
-});
-
-self.addEventListener('notificationclick', function(e) {
-  console.log('Notification click yo.');
-
-  if (clients.openWindow) {
-    clients.openWindow('https://gauntface.com/blog/2014/12/15/push-notifications-service-worker');
-  } else {
-    console.log('Notification clicked, but clients.openWindow is not currently supported');
-  }
 });

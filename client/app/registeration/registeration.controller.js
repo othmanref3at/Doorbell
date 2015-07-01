@@ -1,42 +1,69 @@
 'use strict';
 
 //create our angular module and anject firebase 
-angular.module('doorbellApp')
+var app = angular.module('doorbellApp')
 
 //create our main controller and get access to firebase
-.controller('RegisterationCtrl', function($scope, $firebase) {
 
-	//connect to firebase
-	$scope.ref = new Firebase("https://doorbellyamsafer.firebaseio.com/emplyee");
-	$scope.add = function() {
-		$scope.ref.child($scope.phone).set({
-			name: $scope.name,
-			email: $scope.email,
-			phone: $scope.phone
+app.controller('RegisterationCtrl', function($firebase, $scope, $cookies , $location) {
 
-		});
-	};
+    //login with Google account ----------------------------------------------------------------------
+    $scope.authenticate = function(provider) {
+        $auth.authenticate(provider);
+        console.log($auth.authenticate(provider));
+    };
 
 
-		$scope.retrive=function($locationProvider){
-		$scope.ref.orderByValue().limitToLast(2).on('value',function(snapshot) {
-			
-			$rootScope.currentUser = snapshot.val();
-			
-			
-		});
-		console.log($rootScope.currentUser);
-			console.log(typeof ($rootScope.currentUser));
-			
-			if($rootScope.currentUser ==='undefined'){
-				console.log("undefined rootScope");
-			}else {
-				console.log("defined rootScope");
-				//$state.go('test22');
-			}
+    //add user info to firebase DB
+    var ref = new Firebase("https://doorbellyamsafer.firebaseio.com//EMPLOYEE");
+    // $scope.name = "test";
+    // $scope.phone = "0598308707";
+    // $scope.email = "walaa@yamsafer.me";
+    // $scope.token = "anytoken";
+    $scope.name;
+    $scope.phone;
+    $scope.email;
+    $scope.token = "";
 
-			return $rootScope.currentUser;
+    var forbiddenChars = '.$[]#/'; //contains the forbidden characters
+    escape(forbiddenChars); //results in ".%24%5B%5D%23/"
+    encodeURI(forbiddenChars); //results in ".%24%5B%5D%23%2F"
+    encodeURIComponent(forbiddenChars); //results in ".%24%5B%5D%23%2F"
+    $scope.add = function() {
 
-		
-	};
+            var uid = ref.child(encodeURIComponent($scope.email).replace('.', '%2E')).set({
+                email: $scope.email,
+                name: $scope.name,
+                phone: $scope.phone,
+                token: $scope.token
+            });
+            //to make input feild empty after add its input to DB
+            $scope.name = "";
+            $scope.phone = "";
+            $scope.email = "";
+            $scope.token = "";
+
+
+        }
+        // retrive the last added user data from firebase    
+
+    var ref = new Firebase("https://doorbellyamsafer.firebaseio.com//EMPLOYEE");
+    $scope.retrive = function($locationProvider) {
+        var eid = ref.limitToLast(1).once('child_added', function(snapshot) {
+            //.orderByValue().limitToLast(1)
+            $scope.currentUser = snapshot.val();
+            console.log($scope.currentUser);
+        });
+        $location.path ('subscription');
+    };
+    $scope.setCookies = function() {
+        //set cookies -----
+        $cookies.put($scope.email, $scope.name);
+
+        //retrive cookies
+        $scope.mycookie = $cookies.get($scope.email);
+        console.log($scope.mycookie);
+    };
+
+
 });
