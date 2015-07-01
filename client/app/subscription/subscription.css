@@ -1,8 +1,15 @@
 
 
+<<<<<<< HEAD
 .block {
 
     background:#3a57af ;
+=======
+
+.block {
+
+    background:#505050 ;
+>>>>>>> master
     text-align: center ;
     margin-top: 5em;
   padding:10px;
@@ -48,4 +55,8 @@ input[type=radio]:checked + label:before {
     font-size: 24px;
     text-align: center;
     line-height: 18px;
+<<<<<<< HEAD
 }*/
+=======
+}*/
+>>>>>>> master

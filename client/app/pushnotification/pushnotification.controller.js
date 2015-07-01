@@ -1,11 +1,6 @@
 'use strict';
 
 angular.module('doorbellApp')
-  .controller('TestCtrl', function ($scope) {
+  .controller('PushnotificationCtrl', function ($scope) {
     $scope.message = 'Hello';
-
-
-   
-
-
   });

@@ -2,18 +2,18 @@ link(href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,40
 link(href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css", rel="stylesheet")
 .testbox
   h1 Registration
-  form(action="/")
+  form(role='form')
     hr
      
     hr
     label#icon(for="name")
       i.icon-envelope
-    input#name(type="text", name="name", placeholder="Email", required="")
+    input#name(type='text', name='InputName',ng-model="name", placeholder='Enter Name', required='')
     label#icon(for="name")
       i.icon-user
-    input#name(type="text", name="name", placeholder="Name", required="")
+    input#name(type='text', name='InputName',ng-model="phone", placeholder='Enter Phone-Number', required='')
     label#icon(for="name")
       i.icon-shield
-    input#name(type="text", name="name", placeholder="PhoneNumber", required="")
+    input#name(type='email',ng-model="email", name='InputEmail', placeholder='Enter Email', required='')
      
-    a.button(href="#") Register
+    a.button(type='submit',ng-click="add()", name='submit', value='Register') Register

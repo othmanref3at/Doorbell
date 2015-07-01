@@ -1,11 +1,6 @@
 'use strict';
 
 angular.module('doorbellApp')
-  .controller('TestCtrl', function ($scope) {
+  .controller('Test22Ctrl', function ($scope) {
     $scope.message = 'Hello';
-
-
-   
-
-
   });
