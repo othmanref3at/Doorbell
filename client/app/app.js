@@ -8,6 +8,7 @@ var app = angular.module('doorbellApp', [
     'ui.bootstrap',
     'firebase',
     'satellizer'
+    //'LocalStorageModule'
 
 
 ])
@@ -79,10 +80,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $auth
         }
     });
 
-
-
-    // $urlRouterProvider.otherwise('/registration');
-
+ 
 });
 
 app.run(function($rootScope, $state, $location) {
