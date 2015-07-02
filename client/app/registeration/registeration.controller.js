@@ -5,15 +5,13 @@ var app = angular.module('doorbellApp')
 
 //create our main controller and get access to firebase
 
-app.controller('RegisterationCtrl', function($firebase, $scope, $auth,$http ,$cookies, $location, $cookieStore) {
+app.controller('RegisterationCtrl', function($firebase, $scope, $auth, $cookies, $location, $cookieStore) {
 
 	//login with Google account ----------------------------------------------------------------------
 	$scope.authenticate = function(provider) {
 		$auth.authenticate(provider);
 		console.log($auth.authenticate(provider));
 	};
-
-
 
 	//add user info to firebase DB
 	var ref = new Firebase("https://doorbellyamsafer.firebaseio.com//EMPLOYEE");
@@ -22,7 +20,7 @@ app.controller('RegisterationCtrl', function($firebase, $scope, $auth,$http ,$co
 	$scope.email = "walaa@yamsafer.me";
 	$scope.token = "anytoken";
 	// $scope.name;
- // 	$scope.phone;
+	// 	$scope.phone;
 	// $scope.email;
 	// $scope.token = "";
 
@@ -44,7 +42,7 @@ app.controller('RegisterationCtrl', function($firebase, $scope, $auth,$http ,$co
 			$scope.email = "";
 			$scope.token = "";
 
-		$cookieStore.put($scope.email, $scope.name);
+			$cookieStore.put($scope.email, $scope.name);
 
 		}
 		// retrive the last added user data from firebase	
@@ -63,10 +61,10 @@ app.controller('RegisterationCtrl', function($firebase, $scope, $auth,$http ,$co
 		//$location.path('subscription');
 	};
 	$scope.setCookies = function() {
-		
+
 		//set cookies -----
-		 var coo = $cookieStore.put($scope.email, '$scope.name');
-		 console.log(coo);
+		var coo = $cookieStore.put($scope.email, '$scope.name');
+		console.log(coo);
 		//retrive cookies
 		var mycookie = $cookieStore.get($scope.email);
 		console.log(mycookie);
