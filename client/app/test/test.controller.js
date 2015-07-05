@@ -15,13 +15,7 @@ angular.module('doorbellApp')
             var passward = $scope.passward;
              console.log($scope.email);
              console.log(passward);       
-
-    $scope.ref.authWithPassword({
-  email    : email,
-  password : passward
-
-},
-
+             
  function(error, authData, $locationProvider) {
   $scope.ref = new Firebase("https://doorbellyamsafer.firebaseio.com/Admin");
 

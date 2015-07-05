@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, 
 pre, form, fieldset, input, textarea, p, blockquote, th, td { 
   padding:0;
@@ -5,6 +6,19 @@ pre, form, fieldset, input, textarea, p, blockquote, th, td {
 fieldset, img {border:0}
 ol, ul, li {list-style:none}
 :focus {outline:none}
+=======
+/*body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, 
+pre, form, fieldset, input, textarea, p, blockquote, th, td { 
+  padding:0;
+  margin:0;}
+
+fieldset, img {border:0}
+
+ol, ul, li {list-style:none}
+
+:focus {outline:none}
+
+>>>>>>> master
 body,
 input,
 textarea,
@@ -12,8 +26,15 @@ select {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   color: #4c4c4c;
+<<<<<<< HEAD
 }
  
+=======
+
+}
+ 
+
+>>>>>>> master
  
 h1 {
   font-size: 40px;
@@ -24,6 +45,10 @@ h1 {
   padding-top: 10px;
   margin-bottom: 10px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 html{
   background-color: #ffffff;
 } 
@@ -36,9 +61,17 @@ html{
   box-shadow: 3px 4px 7px rgba(0,0,0,.31); 
   border: solid 2px #cbc9c9;
 }
+<<<<<<< HEAD
 input[type=radio] {
   visibility: hidden;
 }
+=======
+
+input[type=radio] {
+  visibility: hidden;
+}
+
+>>>>>>> master
 form{
   margin: 0 30px;
 }
@@ -48,10 +81,18 @@ form{
 input[type=radio]:checked + label:after {
   opacity: 1;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 hr{
   color: #a9a9a9;
   opacity: 0.3;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 input[type=text],input[type=PhoneNumber]{
   width: 200px; 
   height: 39px; 
@@ -63,9 +104,17 @@ input[type=text],input[type=PhoneNumber]{
   margin-top: 13px; 
   padding-left: 10px;
 }
+<<<<<<< HEAD
 input[type=PhoneNumber]{
   margin-bottom: 25px;
 }
+=======
+
+input[type=PhoneNumber]{
+  margin-bottom: 25px;
+}
+
+>>>>>>> master
 #icon {
   display: inline-block;
   width: 40px;
@@ -77,14 +126,26 @@ input[type=PhoneNumber]{
   box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
   border: solid 0px #cbc9c9;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 .gender {
   margin-left: 30px;
   margin-bottom: 30px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 .accounttype{
   margin-left: 8px;
   margin-top: 20px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 a.button {
   font-size: 14px;
   font-weight: 600;
@@ -102,6 +163,10 @@ a.button {
   margin-right: 25px;
   position: relative;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 a.button:hover {
   top: 3px;
   background-color:#2e458b;
@@ -110,3 +175,8 @@ a.button:hover {
   box-shadow: none;
   
 }
+<<<<<<< HEAD
+=======
+
+*/
+>>>>>>> master

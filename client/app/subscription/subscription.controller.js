@@ -3,44 +3,6 @@
 angular.module('doorbellApp')
 	.controller('SubscriptionCtrl', function($scope , $firebase) {
 
-
-
-	var API_KEY = 'AIzaSyA4a5_4KBa2D4MbAOzt0onlDTFrvbzXM0M';
-	var PUSH_SERVER_URL = 'https://console.developers.google.com/project/doorbell-984';
-
-	$scope.checkSubscribe = function(e) {
-		console.log("subscribe");
-			 
-		subscribeDevice();
-	}
-
-	$scope.checkUnsubscribe = function(e) {
-		//changesubscrib();
-		console.log("un");
-		//unsubscribeDevice();
-	}
-
-		// Check service workers are supported
-		if (!('serviceWorker' in navigator)) {
-			showError('Ooops No Service Worker found', 'This is most likely down ' +
-					'to the site being run in a browser without service worker support. ' +
-					'Make sure you are in Chrome M40 above (See chrome://version).');
-			return;
-			}
-			console.log("check if service worker supported ");
-
-		navigator.serviceWorker.register('/app/subscription/serviceworker.js', {
-				scope: '/app/subscription/'
-		}).then(function(serviceWorkerRegistration) {
-		// Check if this service worker supports push
-			if (!serviceWorkerRegistration.pushManager) {
-				showError('Ooops Push Isn\'t Supported', 'This is most likely ' +
-						'down to the current browser doesn\'t have support for push. ' +
-						'Try Chrome M41.');
-				return;
-			}
-			});
-
 	// Register the Service Worker
 	navigator.serviceWorker.register('/app/subscription/serviceworker.js', {
 				scope: '/app/subscription/'
@@ -64,6 +26,7 @@ angular.module('doorbellApp')
 		}
 
 
+
 		function showError(title, message) {
 			var buttonContainer = document.querySelector('.button-container');
 			buttonContainer.style.display = 'none';
@@ -85,6 +48,7 @@ angular.module('doorbellApp')
 			return;
 			}
 		}
+
 
 
 		function requestPushPermission() {

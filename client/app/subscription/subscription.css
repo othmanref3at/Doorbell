@@ -1,9 +1,10 @@
 
 
+
 .block {
 
-    background:#3a57af ;
-    text-align: center ;
+    background:#505050 ;
+        text-align: center ;
     margin-top: 5em;
   padding:10px;
   color:#fff;
@@ -48,4 +49,6 @@ input[type=radio]:checked + label:before {
     font-size: 24px;
     text-align: center;
     line-height: 18px;
+<<<<<<< HEAD
 }*/
+
