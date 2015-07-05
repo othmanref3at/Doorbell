@@ -5,6 +5,7 @@ angular.module('doorbellApp')
 
 
 
+
 	var API_KEY = 'AIzaSyA4a5_4KBa2D4MbAOzt0onlDTFrvbzXM0M';
 	var PUSH_SERVER_URL = 'https://console.developers.google.com/project/doorbell-984';
 
@@ -57,6 +58,23 @@ angular.module('doorbellApp')
 		});
 
 
+
+	// Register the Service Worker
+	navigator.serviceWorker.register('/app/subscription/serviceworker.js', {
+				scope: '/app/subscription/'
+	})
+		.then(function(registration) {
+		// Registration worked :)
+		console.log('registration = ', registration);
+		})
+		.catch(function(err) {
+		// Registration failed :(
+		showError('Ooops a Service Worker Error', 'Whilst registering the  ' +
+					'service worker, something caused an error and resulting in the ' +
+					'service worker not getting installed. #NeedsABugFix.');
+		});
+
+
 		function subscribeDevice() {
 			console.log(" subscribeDevice");
 			requestNotificationPermission();
@@ -85,6 +103,7 @@ angular.module('doorbellApp')
 			return;
 			}
 		}
+
 
 
 		function requestPushPermission() {

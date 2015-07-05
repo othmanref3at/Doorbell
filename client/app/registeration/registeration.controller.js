@@ -3,7 +3,7 @@
 //create our angular module and anject firebase 
 var app = angular.module('doorbellApp')
 
-//create our main controller and get access to firebase
+ 
 
 app.controller('RegisterationCtrl', function($firebase, $scope, $auth, $cookies, $location, $cookieStore) {
 
@@ -69,7 +69,8 @@ app.controller('RegisterationCtrl', function($firebase, $scope, $auth, $cookies,
 		var mycookie = $cookieStore.get($scope.email);
 		console.log(mycookie);
 	};
-
-
-
-});
+ 
+	
+ 
+ }); 
+ 
