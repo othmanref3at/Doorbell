@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('doorbellApp')
-	.controller('SubscriptionCtrl', function($scope) {
+	.controller('SubscriptionCtrl', function($scope , $firebase) {
+
 
 
 	var API_KEY = 'AIzaSyA4a5_4KBa2D4MbAOzt0onlDTFrvbzXM0M';
@@ -115,6 +116,13 @@ angular.module('doorbellApp')
 		formData.append('registration', subscriptionId);
 		formData.append('endpoint', endpoint);
 		console.log("continue");
+	$scope.ref = new Firebase("https://doorbellyamsafer.firebaseio.com/emplyee");
+	$scope.add = function() {
+	$scope.ref.set({
+			token: subscriptionId
+
+		});
+	};
 		// SAVE FIREBASE
 	}
 

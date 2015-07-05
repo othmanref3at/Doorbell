@@ -29,7 +29,7 @@ html{
 } 
 .testbox {
   margin: 20px auto;
-  width: 343px; 
+  width: 2000px; 
   height: 464px;    
   border-radius: 8px/7px; 
   background-color: #ebebeb;  
@@ -154,6 +154,8 @@ input[type=radio] {
 form{
   margin: 0 30px;
 }
+
+
  
  
  
@@ -165,7 +167,7 @@ hr{
   opacity: 0.3;
 }
 input[type=text],input[type=PhoneNumber]{
-  width: 200px; 
+  width: 300px; 
   height: 39px; 
    border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
   background-color: #fff; 
@@ -198,7 +200,7 @@ input[type=PhoneNumber]{
   margin-top: 20px;
 }
 a.button {
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 600;
   color: white;
   padding: 6px 25px 0px 20px;
@@ -206,13 +208,13 @@ a.button {
   display: inline-block;
   float: right;
   text-decoration: none;
-  width: 90px; height: 31px; 
+  width: 120px; height: 31px; 
   border-radius: 5px; 
   background-color: #3a57af;  
   box-shadow: 0 3px rgba(58,87,175,.75); 
   top: 0px;
   margin-right: 90px;
-  margin-top: 80px;
+  margin-top: 50px;
   position: relative;
 }
 a.button:hover {

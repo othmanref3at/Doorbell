@@ -1,22 +1,40 @@
 'use strict';
 
+//create our angular module and anject firebase 
 angular.module('doorbellApp')
-  .controller('TestCtrl', function ($scope) {
-    $scope.message = 'Hello';
+
+//create our main controller and get access to firebase
+.controller('TestCtrl', function($scope , $location , $firebase) {
+    console.log ("hello");
+    $scope.ref = new Firebase("https://doorbellyamsafer.firebaseio.com/Admin");
+
+    $scope.login=function(){
 
 
-    //check the service worker are support 
-    if('serviceWorker' in navigator ){
-    	navigator.serviceWorker.register('../app.js',{scope:'./'})
-    	.then(console.log("refat"));
+            var email = $scope.email;
+            var passward = $scope.passward;
+             console.log($scope.email);
+             console.log(passward);       
 
-    }
-    else 
-    {
-    	window.PushDemo.ui.showError('the service worker not supported');
-    	window.PushDemo.showOnlyError();
-    }
+    $scope.ref.authWithPassword({
+  email    : email,
+  password : passward
 
+},
 
+ function(error, authData, $locationProvider) {
+  $scope.ref = new Firebase("https://doorbellyamsafer.firebaseio.com/Admin");
 
-  });
+  if (error) {
+ 
+    console.log("Login Failed! ", error);
+  } else {
+
+      $location.path('registeration');
+      console.log("Authenticated successfully");
+
+  }
+});
+                }
+
+});
