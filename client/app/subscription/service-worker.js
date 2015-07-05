@@ -11,7 +11,7 @@ var KEY_VALUE_STORE_NAME = 'key-value-store';
 
 var idb;
 
-// avoid opening idb until first call
+// ////avoid opening idb until first call
 function getIdb() {
   if (!idb) {
     idb = new IndexDBWrapper('key-value-store', 1, function(db) {
