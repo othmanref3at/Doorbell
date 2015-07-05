@@ -3,7 +3,7 @@
 //create our angular module and anject firebase 
 var app = angular.module('doorbellApp')
 
-//create our main controller and get access to firebase
+ 
 
 app.controller('RegisterationCtrl', function($firebase, $scope, $auth, $cookies, $location, $cookieStore) {
 
@@ -86,7 +86,8 @@ var ref = new Firebase("https://doorbellyamsafer.firebaseio.com//EMPLOYEE");
 		var mycookie = $cookies.get($scope.currentUser.email);
 		console.log(mycookie);
 	};
-
-
-
-});
+ 
+	
+ 
+ }); 
+ 

@@ -1,9 +1,8 @@
 
 
-
 .block {
 
-    background:#505050 ;
+    background:#3a57af ;
     text-align: center ;
     margin-top: 5em;
   padding:10px;
@@ -11,7 +10,7 @@
 }
 .pragraph { 
     text-align: center ; 
-    background: gray;
+    background: #ebebeb;
     padding-top: 8em;
 }
 input[type=radio] {
@@ -20,6 +19,7 @@ input[type=radio] {
  
 .radio label:before {
     border-radius: 8px;
+
 }
 label {
     display: inline-block;
@@ -27,14 +27,14 @@ label {
     position: relative;
     padding-left: 25px;
     margin-right: 15px;
-    font-size: 13px;
+    font-size: 20px;
 }
 label:before {
     content: "";
     display: inline-block;
     width: 16px;
     height: 16px;
-    margin-right: 10px;
+    margin-right: 20px;
     position: absolute;
     left: 0;
     bottom: 1px;
@@ -48,4 +48,6 @@ input[type=radio]:checked + label:before {
     font-size: 24px;
     text-align: center;
     line-height: 18px;
-}*/
+ 
+}
+
