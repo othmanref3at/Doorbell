@@ -1,11 +1,16 @@
 'use strict';
 
 angular.module('doorbellApp')
-	.controller('SubscriptionCtrl', function($scope) {
-
+	.controller('SubscriptionCtrl', function($scope , $firebase , $cookies , $cookieStore) {
 
 	var API_KEY = 'AIzaSyA4a5_4KBa2D4MbAOzt0onlDTFrvbzXM0M';
 	var PUSH_SERVER_URL = 'https://console.developers.google.com/project/doorbell-984';
+
+	//get cookie and encode it 
+        var cookieTest = $cookieStore.get('currentUser');
+        console.log(encodeURIComponent(cookieTest).replace('.', '%2E'));
+
+        console.log(cookieTest);
 
 	$scope.checkSubscribe = function(e) {
 		console.log("subscribe");
@@ -115,7 +120,13 @@ angular.module('doorbellApp')
 		formData.append('registration', subscriptionId);
 		formData.append('endpoint', endpoint);
 		console.log("continue");
-		// SAVE FIREBASE
-	}
+//add token to employee info on firebase DB 
+            var ref = new Firebase("https://doorbellyamsafer.firebaseio.com//EMPLOYEE/");
+            var tokenUpdate = ref.child(encodeURIComponent(cookieTest).replace('.', '%2E')).update({
+                token: subscriptionId
+                
+		
+	});
+}
 
 	});

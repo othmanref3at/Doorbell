@@ -1,0 +1,21 @@
+h1    
+  .videotable(style='width: 90%')
+    table
+      td Name of Emplyee
+      td     Email
+      td  Phone Number
+      td Add to Defult
+      td Add to Interview List
+      tr(ng-repeat="eid in snap")
+        td {{eid.name}}
+        td {{eid.email}}
+        td {{eid.phone}}
+        td
+          .def
+            form(name='f2')
+                input#edit(type='submit',ng-click="addToDefult(eid.name , eid.token)", name='submit', value='Add to defult')
+        td
+          .inte
+            form(name='f5')
+                input#edit(type='submit',ng-click="addToInterview(eid.name , eid.token)", name='submit', value='Add to interview list')
+        
