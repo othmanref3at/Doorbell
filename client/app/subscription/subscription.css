@@ -3,7 +3,11 @@
 
 .block {
 
+<<<<<<< HEAD
     background:#505050 ; 
+=======
+    background:#3a57af ;
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
     text-align: center ;
     margin-top: 5em;
   padding:10px;
@@ -48,5 +52,12 @@ input[type=radio]:checked + label:before {
     color: #fff;
     font-size: 24px;
     text-align: center;
+<<<<<<< HEAD
     line-height: 18px; 
 }*/ 
+=======
+    line-height: 18px;
+ 
+}
+
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763

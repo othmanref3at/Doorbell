@@ -1,19 +1,21 @@
+<<<<<<< HEAD
+ 
 link(href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600", rel="stylesheet", type="text/css")
 link(href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css", rel="stylesheet")
 .testbox
-  h1 Registration
+
+  h1 Login
   form(role='form')
     hr
      
     hr
-    label#icon(for="name")
-      i.icon-envelope
-    input#name(type='text', name='InputName',ng-model="name", placeholder='Enter Name', required='')
-    label#icon(for="name")
-      i.icon-user
-    input#name(type='text', name='InputName',ng-model="phone", placeholder='Enter Phone-Number', required='')
+     
+    input#name(type='text', name='InputEmail',ng-model="email", placeholder='Enter Email', required='')
+
     label#icon(for="name")
       i.icon-shield
-    input#name(type='email',ng-model="email", name='InputEmail', placeholder='Enter Email', required='')
+    input#name(type='text', name='InputName',ng-model="passward", placeholder='Enter passward', required='')
      
-    a.button(type='submit',ng-click="add()", name='submit', value='Register') Register
+    a.button(type='submit',ng-click="login(email,passward)", name='submit', value='login') login
+
+ 

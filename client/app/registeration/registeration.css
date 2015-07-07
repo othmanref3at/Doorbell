@@ -1,4 +1,16 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+/*body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, 
+=======
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, 
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
+pre, form, fieldset, input, textarea, p, blockquote, th, td { 
+  padding:0;
+  margin:0;}
+fieldset, img {border:0}
+ol, ul, li {list-style:none}
+:focus {outline:none}
+=======
 /*body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, 
 pre, form, fieldset, input, textarea, p, blockquote, th, td { 
   padding:0;
@@ -9,16 +21,12 @@ fieldset, img {border:0}
 ol, ul, li {list-style:none}
 
 :focus {outline:none}
-
-=======
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, 
-pre, form, fieldset, input, textarea, p, blockquote, th, td { 
-  padding:0;
-  margin:0;}
-fieldset, img {border:0}
-ol, ul, li {list-style:none}
-:focus {outline:none}
+<<<<<<< HEAD
 >>>>>>> 219b05167ee31d15c2be83bc8b2cef3258a7935d
+=======
+
+>>>>>>> master
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
 body,
 input,
 textarea,
@@ -27,14 +35,22 @@ select {
   font-size: 16px;
   color: #4c4c4c;
 <<<<<<< HEAD
-
-}
- 
+<<<<<<< HEAD
 
 =======
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
 }
  
+=======
+
+}
+ 
+<<<<<<< HEAD
 >>>>>>> 219b05167ee31d15c2be83bc8b2cef3258a7935d
+=======
+
+>>>>>>> master
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
  
 h1 {
   font-size: 40px;
@@ -46,9 +62,15 @@ h1 {
   margin-bottom: 10px;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 219b05167ee31d15c2be83bc8b2cef3258a7935d
+=======
+=======
+
+>>>>>>> master
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
 html{
   background-color: #ffffff;
 } 
@@ -62,16 +84,24 @@ html{
   border: solid 2px #cbc9c9;
 }
 <<<<<<< HEAD
-
-input[type=radio] {
-  visibility: hidden;
-}
+<<<<<<< HEAD
 
 =======
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
 input[type=radio] {
   visibility: hidden;
 }
+=======
+
+input[type=radio] {
+  visibility: hidden;
+}
+<<<<<<< HEAD
 >>>>>>> 219b05167ee31d15c2be83bc8b2cef3258a7935d
+=======
+
+>>>>>>> master
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
 form{
   margin: 0 30px;
 }
@@ -82,17 +112,29 @@ input[type=radio]:checked + label:after {
   opacity: 1;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 219b05167ee31d15c2be83bc8b2cef3258a7935d
+=======
+=======
+
+>>>>>>> master
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
 hr{
   color: #a9a9a9;
   opacity: 0.3;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 219b05167ee31d15c2be83bc8b2cef3258a7935d
+=======
+=======
+
+>>>>>>> master
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
 input[type=text],input[type=PhoneNumber]{
   width: 200px; 
   height: 39px; 
@@ -105,16 +147,24 @@ input[type=text],input[type=PhoneNumber]{
   padding-left: 10px;
 }
 <<<<<<< HEAD
-
-input[type=PhoneNumber]{
-  margin-bottom: 25px;
-}
+<<<<<<< HEAD
 
 =======
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
 input[type=PhoneNumber]{
   margin-bottom: 25px;
 }
+=======
+
+input[type=PhoneNumber]{
+  margin-bottom: 25px;
+}
+<<<<<<< HEAD
 >>>>>>> 219b05167ee31d15c2be83bc8b2cef3258a7935d
+=======
+
+>>>>>>> master
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
 #icon {
   display: inline-block;
   width: 40px;
@@ -127,25 +177,43 @@ input[type=PhoneNumber]{
   border: solid 0px #cbc9c9;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 219b05167ee31d15c2be83bc8b2cef3258a7935d
+=======
+=======
+
+>>>>>>> master
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
 .gender {
   margin-left: 30px;
   margin-bottom: 30px;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 219b05167ee31d15c2be83bc8b2cef3258a7935d
+=======
+=======
+
+>>>>>>> master
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
 .accounttype{
   margin-left: 8px;
   margin-top: 20px;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 219b05167ee31d15c2be83bc8b2cef3258a7935d
+=======
+=======
+
+>>>>>>> master
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
 a.button {
   font-size: 14px;
   font-weight: 600;
@@ -164,9 +232,15 @@ a.button {
   position: relative;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 219b05167ee31d15c2be83bc8b2cef3258a7935d
+=======
+=======
+
+>>>>>>> master
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
 a.button:hover {
   top: 3px;
   background-color:#2e458b;
@@ -176,7 +250,14 @@ a.button:hover {
   
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 */
 =======
 >>>>>>> 219b05167ee31d15c2be83bc8b2cef3258a7935d
+=======
+=======
+
+*/
+>>>>>>> master
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763

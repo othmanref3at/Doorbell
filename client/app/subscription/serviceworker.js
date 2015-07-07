@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
 'use strict';
 
 self.addEventListener('install', function(e) {
@@ -32,6 +35,7 @@ self.addEventListener('push', function(e) {
   var notifi;
 if(Notification.permission === 'default'){
     alert('Please allow notifications before doing this');
+<<<<<<< HEAD
 
 }else{
       notifi= new Notification('New message from the door',{
@@ -98,3 +102,21 @@ if(Notification.permission === 'default'){
 //   }
 });
  
+=======
+
+}else{
+      notifi= new Notification('New message from the door',{
+        body: 'Please go open the door',
+        icon: './../../assets/images/message.png'
+
+         
+        });
+         notifi.onclick = function(){
+        alert("Im comming :P");
+
+        }
+      }
+
+
+}); 
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
