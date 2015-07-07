@@ -42,22 +42,7 @@ angular.module('doorbellApp')
 			}
 			});
 
-	// Register the Service Worker
-	navigator.serviceWorker.register('/app/subscription/serviceworker.js', {
-				scope: '/app/subscription/'
-	})
-		.then(function(registration) {
-		// Registration worked :)
-		console.log('registration = ', registration);
-		})
-		.catch(function(err) {
-		// Registration failed :(
-		showError('Ooops a Service Worker Error', 'Whilst registering the  ' +
-					'service worker, something caused an error and resulting in the ' +
-					'service worker not getting installed. #NeedsABugFix.');
-		});
-
-
+ 
 
 	// Register the Service Worker
 	navigator.serviceWorker.register('/app/subscription/serviceworker.js', {
