@@ -1,7 +1,15 @@
 'use strict';
 
 angular.module('doorbellApp')
+<<<<<<< HEAD
+
 	.controller('SubscriptionCtrl', function($scope , $firebase , $cookies , $cookieStore) {
+=======
+	.controller('SubscriptionCtrl', function($scope , $firebase) {
+
+
+
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
 
 	var API_KEY = 'AIzaSyA4a5_4KBa2D4MbAOzt0onlDTFrvbzXM0M';
 	var PUSH_SERVER_URL = 'https://console.developers.google.com/project/doorbell-984';
@@ -49,8 +57,29 @@ angular.module('doorbellApp')
 						'down to the current browser doesn\'t have support for push. ' +
 						'Try Chrome M41.');
 				return;
+<<<<<<< HEAD
+ 
+=======
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
 			}
 			});
+
+	// Register the Service Worker
+	navigator.serviceWorker.register('/app/subscription/serviceworker.js', {
+				scope: '/app/subscription/'
+	})
+		.then(function(registration) {
+		// Registration worked :)
+		console.log('registration = ', registration);
+		})
+		.catch(function(err) {
+		// Registration failed :(
+		showError('Ooops a Service Worker Error', 'Whilst registering the  ' +
+					'service worker, something caused an error and resulting in the ' +
+					'service worker not getting installed. #NeedsABugFix.');
+		});
+
+
 
 	// Register the Service Worker
 	navigator.serviceWorker.register('/app/subscription/serviceworker.js', {
@@ -73,6 +102,43 @@ angular.module('doorbellApp')
 			requestNotificationPermission();
 			requestPushPermission();		
 		}
+<<<<<<< HEAD
+ 
+ 
+ 
+ // if ('serviceWorker' in navigator) {
+
+ //    console.log(navigator.serviceWorker.controller);
+ //    navigator.serviceWorker.register('http://localhost:9000/app/subscription/service-worker.js', {
+ //      scope: './app/'
+ //    })
+ //    .then(initialiseState);
+ //  } else {
+ //    // Service Workers aren't supported so you should hide the push UI
+ //    // If it's currently visible.
+ //   console.log('service worker not supported');
+     
+ //  } 
+ 
+
+					// if ('serviceWorker' in navigator){
+					// console.log("SW present !!! ");
+
+					// navigator.serviceWorker.register('service-worker.js', {
+					//   scope: './'
+					// }).then(function(registration){
+					//   console.log('Service worker registered : ', registration.scope);
+					//   console.log(navigator.serviceWorker.controller);
+					// })
+					// .catch(function(err){
+					//   console.log("Service worker registration failed : ", err);
+					// });
+
+					// }
+
+   
+=======
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
 
 
 		function showError(title, message) {
@@ -96,7 +162,12 @@ angular.module('doorbellApp')
 			return;
 			}
 		}
+<<<<<<< HEAD
+ 
+=======
 
+
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
 
 		function requestPushPermission() {
 			console.log("2) request push permission");
@@ -127,6 +198,7 @@ angular.module('doorbellApp')
 		formData.append('registration', subscriptionId);
 		formData.append('endpoint', endpoint);
 		console.log("continue");
+<<<<<<< HEAD
 //add token to employee info on firebase DB 
             var ref = new Firebase("https://doorbellyamsafer.firebaseio.com//EMPLOYEE/");
             var tokenUpdate = ref.child(encodeURIComponent(cookieTest).replace('.', '%2E')).update({
@@ -135,6 +207,17 @@ angular.module('doorbellApp')
 		
 	});
 }
+=======
+	$scope.ref = new Firebase("https://doorbellyamsafer.firebaseio.com/emplyee");
+	$scope.add = function() {
+	$scope.ref.set({
+			token: subscriptionId
+
+		});
+	};
+		// SAVE FIREBASE
+	}
+>>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
 
 
 

@@ -1,8 +1,10 @@
 
+ 
 
-.blockk {
-
-    background:#3a57af ;
+.blockk { 
+    background:#505050 ; 
+ 
+    /*background:#3a57af ; */
     text-align: center ;
     margin-top: 4em;
   padding:10px;
@@ -49,8 +51,14 @@ input[type=radio]:checked + .ll:before {
     color: #fff;
     font-size: 24px;
     text-align: center;
-    line-height: 18px;
-}
+<<<<<<< HEAD
+    line-height: 18px; 
+}*/ 
+ 
+ 
+
+ 
+
 #hisetoryView{ 
   font-size: 17px;
   font-weight: 600; 
@@ -80,3 +88,4 @@ input[type=radio]:checked + .ll:before {
   box-shadow: none;
   
 }
+ 
