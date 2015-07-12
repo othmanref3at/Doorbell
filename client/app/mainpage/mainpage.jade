@@ -1,38 +1,29 @@
-<<<<<<< HEAD
-h1    
-  .videotable(style='width: 90%')
-    table
-      td Name of Emplyee
-      td     Email
-      td  Phone Number
-      td Add to Defult
-      td Add to Interview List
-      tr(ng-repeat="eid in snap")
-        td {{eid.name}}
-        td {{eid.email}}
-        td {{eid.phone}}
-        td
-          .def
-            form(name='f2')
-                input#edit(type='submit',ng-click="addToDefult(eid.name , eid.token)", name='submit', value='Add to defult')
-        td
-          .inte
-            form(name='f5')
-                input#edit(type='submit',ng-click="addToInterview(eid.name , eid.token)", name='submit', value='Add to interview list')
-        
-=======
-span.custom-dropdown.big
-    .ref
-      select
-          option sameh
-          |         
-          option saja
-          |   
-          |         
-          option V for Vendetta
-          |         
-          option The Wolf of Wallstreet
-          |         
-          option Quantum of Solace
-              div(ng-repeat='item in list', ng-click='select(item)', ng-class='{ selected: isSelected(item) }')
->>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
+.pagemain
+    .mainimg
+        img(src='./../assets/images/yam.png', alt='HTML5 Icon', style='width:120px;height:50px;')
+    .out
+    form(name='f2')
+      input#logout(type='submit',ng-click="logOut()", name='submit', value='LOGOUT')       
+    .wrapperr
+        table
+            thead
+                tr
+                  td Name of emplyee
+                  td Email
+                  td Phone Number
+                  td Add to defult
+                  td Add to interview list
+            tbody
+                  tr(ng-repeat="eid in snap")
+                    td {{eid.name}}
+                    td {{eid.email}}
+                    td {{eid.phone}}
+                    td
+                      .def
+                        form(name='f2')
+                            input#edit(type='submit',ng-click="addToDefult(eid.name , eid.token)", name='submit', value='Add to defult')
+                    td
+                      .inte
+                        form(name='f5')
+                            input#edit(type='submit',ng-click="addToInterview(eid.name , eid.token)", name='submit', value='Add to interview list')
+                     

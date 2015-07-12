@@ -1,20 +1,23 @@
-
 link(href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600", rel="stylesheet", type="text/css")
 link(href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css", rel="stylesheet")
-.testbox
-  h1 LOGIN
-  form(role='form')
-    hr
-     
-    hr
-    label#icon(for="name")
-      i.icon-envelope
-    input#name(type='text', name='InputName',ng-model="email", placeholder='Enter email', required='')
-    label#icon(for="name")
-      i.icon-shield 
-     
-    input#name(type='passward', name='InputEmail',ng-model="passward", placeholder='Enter passward', required='')
-     
-  
-    a.button(type='submit',ng-click="login();retrive();setCookies()", name='submit', value='login') login
- 
+.loginPage  
+  .loginbox
+    br
+    br 
+    .headerStyle
+      h1 LOGIN
+
+    form(role='form')
+      
+      label#icon(for="name")
+        i.icon-envelope
+      input#name(type='text', name='email',ng-model="email", placeholder='Enter email', required='')
+      br 
+      br
+      label#icon(for="name")
+        i.icon-shield 
+       
+      input(type="password", name="pswd",ng-model="passward", placeholder='Enter Passward', required='')
+      br
+      br  
+      a.button(type='submit',ng-click="login()", name='submit', value='Login') Login

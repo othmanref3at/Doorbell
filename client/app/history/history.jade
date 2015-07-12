@@ -1,0 +1,17 @@
+.pageHistory
+    .historyimg
+        img(src='./../assets/images/yam.png', alt='HTML5 Icon', style='width:120px;height:50px;')
+    .wrapper
+        table
+            thead
+                tr
+                  td Name of emplyee
+                  td Type of visitor
+                  td Date
+            tbody
+                  tr(ng-repeat="eid in snap")
+                    td {{eid.name}}
+                    td {{eid.type}}
+                    td {{eid.Time}}
+
+        

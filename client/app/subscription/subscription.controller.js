@@ -29,6 +29,13 @@ angular.module('doorbellApp')
 	$scope.checkUnsubscribe = function(e) {
 		//changesubscrib();
 		console.log("un");
+		           var ref = new Firebase("https://doorbellyamsafer.firebaseio.com//EMPLOYEE/");
+            var tokenUpdate = ref.child(encodeURIComponent(cookieTest).replace('.', '%2E')).update({
+                token: "no token"
+                
+		
+	});
+
 		//unsubscribeDevice();
 	}
 
@@ -212,4 +219,8 @@ angular.module('doorbellApp')
 	}
 >>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
 
-	});
+
+
+
+
+ 	});

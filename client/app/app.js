@@ -19,6 +19,10 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $auth
 >>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
     $urlRouterProvider
         .otherwise('/');
+        
+        
+        
+
 
     $locationProvider.html5Mode(true);
 <<<<<<< HEAD
