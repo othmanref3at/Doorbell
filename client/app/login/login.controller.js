@@ -1,7 +1,7 @@
 'use strict';
 
 var app = angular.module('doorbellApp')
-  app.controller('LoginCtrl', function ($scope , $location) {
+  app.controller('LoginCtrl', function ($scope , $location, $window) {
       console.log ("hello");
     $scope.ref = new Firebase("https://doorbellyamsafer.firebaseio.com/Admin");
 
@@ -11,31 +11,36 @@ var app = angular.module('doorbellApp')
 
             var email = $scope.email;
             var passward = $scope.passward;
-             console.log($scope.email);
-             console.log(passward);       
+
+            if(!email.includes("@yamsafer.me")){
+                alert("rererer");
+
+            }else{
+             console.log($scope.passward);
+            
+
 
     $scope.ref.authWithPassword({
-  email    : email,
-  password : passward
+  "email" :email,    
+  "password" : passward
 
-},
-
- $scope.log = function(error, authData, $locationProvider) {
-  var ref = new Firebase("https://doorbellyamsafer.firebaseio.com/Admin");
-
+}, function(error, authData, $locationProvider) {
   if (error) {
  
     console.log("Login Failed! ", error);
   } else {
-    $location.path('mainpage');
 
       console.log("Authenticated successfully");
+      $window.location.href = 'mainpage';
+    // $location.path('mainpage');
+      console.log("Authenticated successfully");
+
     }
 
   
 });
 
 
-                }  
+                } } 
 
               });

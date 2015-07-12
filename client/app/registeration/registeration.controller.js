@@ -1,13 +1,13 @@
 'use strict';
 
 
-
 //create our angular module and anject firebase 
 var app = angular.module('doorbellApp')
 
 
 app.controller('RegisterationCtrl', function($firebase,$scope, $auth, $cookies, $location, $cookieStore) {
-        //login with Google account ----------------------------------------------------------------------
+
+    //login with Google account ----------------------------------------------------------------------
     $scope.authenticate = function(provider) {
         $auth.authenticate(provider);
         console.log($auth.authenticate(provider));
@@ -15,15 +15,15 @@ app.controller('RegisterationCtrl', function($firebase,$scope, $auth, $cookies, 
     var mycookie = "";
     //add user info to firebase DB
     var ref = new Firebase("https://doorbellyamsafer.firebaseio.com//EMPLOYEE");
-    $scope.name = "walaa1221";
-    $scope.phone = "059832222";
-    $scope.email = "walaa11@yamsafer.me";
-    $scope.token = "00";
+    // $scope.name = "walaa1221";
+    // $scope.phone = "059832222";
+    // $scope.email = "walaa11@yamsafer.me";
+    // $scope.token = "00";
 
-    // $scope.name;
-    //     $scope.phone;
-    // $scope.email;
-    // $scope.token = "";
+    $scope.name;
+    $scope.phone;
+    $scope.email;
+    $scope.token = "";
 
 
     //encode email to be the key for DB..............
@@ -33,8 +33,17 @@ app.controller('RegisterationCtrl', function($firebase,$scope, $auth, $cookies, 
     encodeURIComponent(forbiddenChars); //results in ".%24%5B%5D%23%2F"
 
     //main function
-    $scope.main = function() {
-console.log("tsts");
+    $scope.main = function() {   
+    console.log("tsts");
+   if(!$scope.name.includes("@yamsafer.me")){
+      document.getElementById('submit').innerHTML = "First name or Second name should not be empty"; 
+        registeration.name.focus();  
+         return(false); 
+
+            }else{
+                 
+
+
         //add employee info to DB ..
         var ref = new Firebase("https://doorbellyamsafer.firebaseio.com//EMPLOYEE");
         var uid = ref.child(encodeURIComponent($scope.email).replace('.', '%2E')).set({
@@ -71,12 +80,13 @@ console.log("tsts");
             token: 'testUpdated'
 
         });
+}
     };
 
-    //redirect to subscription page if there is cookies for user
+/*    //redirect to subscription page if there is cookies for user
     if (typeof(mycookie) != 'undefined') {
         $location.path('subscription');
-    }
+    }*/
   
 });
 // app.constant("currentUser", {

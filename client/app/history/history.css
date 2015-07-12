@@ -1,0 +1,23 @@
+table{width:80%;border:1px solid #ccc;border-collapse:collapse; margin-left: 100px; margin-top: 40px;}
+table th,
+table td{border:1px solid #ddd;border-width:1px 0;padding:5px 10px;font-size:17px}
+ 
+table thead td{background-color: #6495ED;}
+table tbody tr:nth-child(odd){background-color:#e5e5e5}
+table .number{text-align:right}
+table .date{text-align:center}
+table tfoot th,
+table tfoot td{border-top-width: 2px}
+table tfoot th{text-align: right;}
+.show-phone{display:none}
+
+.pageHistory{
+background-color: #F8F8F8;
+
+}
+
+.historyimg{
+
+  margin-top: 30px;
+  margin-left: 100px;
+}

@@ -15,6 +15,10 @@ var app = angular.module('doorbellApp', [
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $authProvider) {
     $urlRouterProvider
         .otherwise('/');
+        
+        
+        
+
 
     $locationProvider.html5Mode(true);
     //FACEbook

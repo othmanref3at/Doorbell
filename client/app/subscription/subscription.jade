@@ -1,15 +1,19 @@
-.pragraph
-     h1 Enable push-notificatons or Not
-        .block
-            .radio
-                input#subscribe(type='radio', ng-model="subscribe",name='sub', ng-click="checkSubscribe()",value='subscribe')
-                |   
-                |         
+.pragraphh
+    img(src='./../assets/images/yam.png', alt='HTML5 Icon', style='width:300px;height:128px;')
+    .blockk
+        .radio
+            input#subscribe(type='radio', ng-model="subscribe",name='sub', ng-click="checkSubscribe()",value='subscribe')
+            |   
+            | 
+            .ll        
                 label(for='subscribe') subscribe
                 |   
                 |         
-                input#unsubscribe(type='radio',ng-model="unsubscribe",ng-click="checkUnsubscribe()", name='sub', value='unsubscribe')
-                |   
-                |         
+            input#unsubscribe(type='radio',ng-model="unsubscribe",ng-click="checkUnsubscribe()", name='sub', value='unsubscribe')
+            |   
+            |         
+            .ll
                 label(for='unsubscribe') unsubscribe
-       
+    .his
+        form(name='f2')
+            input#hisetoryView(type='submit',onClick="location.href='../history'", name='submit', value='Check History')
