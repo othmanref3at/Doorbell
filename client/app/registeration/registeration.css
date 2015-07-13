@@ -131,7 +131,7 @@ a.button:hover {
 }
 
 
-@mixin disable{
+/*@mixin disable{
   outline:none;
   border:none;
 }
@@ -142,4 +142,4 @@ a.button:hover {
   -o-transition:1s ease;
   -ms-transition:1s ease;
   transition:1s ease;
-}
+}*/

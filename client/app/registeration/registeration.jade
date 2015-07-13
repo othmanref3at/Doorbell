@@ -14,12 +14,12 @@ link(href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css", r
       br
       label#icon(for="name")
         i.icon-shield  
-      input#name(type='text', name='InputName',ng-model="phone", placeholder='Enter Phone-Number', required='')
+      input#name(type='Phone-Number', name='InputPhone-Number',ng-model="phone", placeholder='Enter Phone-Number',ng-pattern="/0-9/", required='')
       br
       label#icon(for="name")
         i.icon-envelope 
-      input#name(type='text', name='InputEmail',ng-model="email", placeholder='Enter Email', required='')
+      input#name(type='email', name='InputEmail',ng-model="email", placeholder='Enter Email',ng-minlength=13, required='')
       br
       br 
-      a.button(type='submit',ng-click="main();retrive();setCookies()", name='submit', value='Register') Register
-      
+      a.button(type='submit',ng-click="main()", name='submit', value='Register') Register
+ 

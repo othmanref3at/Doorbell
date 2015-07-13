@@ -6,13 +6,11 @@
   "display": "standalone",
   "launch_path": "/index.html",
   "description": "A front-end template that helps you build fast, modern mobile web apps.",
-  "icons": [
-    {
-      "src": "images/touch/chrome-touch-icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    }
-  ],
+  "icons": [{
+    "src": "images/touch/chrome-touch-icon-192x192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }],
   "developer": {
     "name": "Matt Gaunt",
     "url": "https://gauntface.com"
@@ -21,13 +19,12 @@
     "*"
   ],
   "default_locale": "en",
-  "permissions": {
-  },
+  "permissions": {},
   "locales": {
     "en": {
       "name": "Super Simple Push Demo",
       "description": "A really basic demo app to show how push messaging can
-      work with service worker"
+      work with service worker "
     }
   },
   "gcm_sender_id": "736620167368",
