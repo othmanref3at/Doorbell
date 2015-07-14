@@ -3,7 +3,7 @@
 angular.module('doorbellApp')
 	.controller('SubscriptionCtrl', function($scope, $firebase, $cookies, $cookieStore) {
 
-		var API_KEY = 'AIzaSyA4a5_4KBa2D4MbAOzt0onlDTFrvbzXM0M';
+		var API_KEY = 'AIzaSyAQxsSLcZtAV_vplw302NKRuUubxegqKa0';
 		var PUSH_SERVER_URL = 'https://console.developers.google.com/project/doorbell-984';
 
 		//get cookie and encode it 
@@ -32,17 +32,7 @@ angular.module('doorbellApp')
 		}
 		console.log("check if service worker supported ");
 
-		navigator.serviceWorker.register('/app/subscription/serviceworker.js', {
-			scope: '/app/subscription/'
-		}).then(function(serviceWorkerRegistration) {
-			// Check if this service worker supports push
-			if (!serviceWorkerRegistration.pushManager) {
-				showError('Ooops Push Isn\'t Supported', 'This is most likely ' +
-					'down to the current browser doesn\'t have support for push. ' +
-					'Try Chrome M41.');
-				return;
-			}
-		});
+	 
 
 		// Register the Service Worker
 		navigator.serviceWorker.register('/app/subscription/serviceworker.js', {
@@ -127,6 +117,7 @@ angular.module('doorbellApp')
 
 			});
 		}
+ 
 
 
 

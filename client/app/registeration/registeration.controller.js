@@ -60,8 +60,8 @@ app.controller('RegisterationCtrl', function($firebase, $scope, $auth, $cookies,
     };
 
     //redirect to subscription page if there is cookies for user
-    if (typeof(mycookie) != 'undefined') {
-        $location.path('subscription');
-    }
+    // if (typeof(mycookie) != 'undefined') {
+    //     $location.path('subscription');
+    // }
 
 });
