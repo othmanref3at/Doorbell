@@ -1,111 +1,52 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
-'use strict';
-
-self.addEventListener('install', function(e) {
-  console.log('oninstall');
-});
-
-self.addEventListener('activate', function(e) {
-  console.log('onactivate');
-});
-
-self.addEventListener('fetch', function(e) {
-  console.log('onfetch:', e);
-});
-
-self.addEventListener('push', function(e) {
-  console.log("unsubscribe");
-                //e.preventDefault();
-                if (!window.Notification) {
-                    alert('sorry,notification not support');
-                } else {
-                         Notification.requestPermission(function(p) {
-                          if (p === 'denied') {
-                              alert('You have denied notification');
-                          } else if (p === 'granted') {
-                              alert('You have granted notification');
-                          }
-                      });
-                     }
-  console.log('Push Event Received');
-
-  var notifi;
-if(Notification.permission === 'default'){
-    alert('Please allow notifications before doing this');
-<<<<<<< HEAD
-
-}else{
-      notifi= new Notification('New message from the door',{
-        body: 'Please go open the door',
-        icon: './../../assets/images/message.png'
-
-         
-        });
-         notifi.onclick = function(){
-        alert("Im comming :P");
-
-        }
-      }
-
-//   if (!(self.Notification && self.Notification.permission === 'granted')) {
-//     console.error('Failed to display notification - not supported');
-
-//     // Perhaps we don't have permission to show a notification
-//     if (self.Notification) {
-//       console.error('  notificaton permission set to:',
-//         self.Notification.permission);
-//     }
-//     return;
-//   }
-
-//   var data = {};
-//   if (e.data) {
-//     data = e.data.json();
-//   }
-//   var title = data.title || 'No Payload with Message';
-//   var message = data.message || 'This will change in future versions of Chrome.';
-//   var icon = 'images/touch/chrome-touch-icon-192x192.png';
-
-//   var notification = new Notification(title, {
-//     body: message,
-//     icon: icon,
-//     tag: 'simple-push-demo-notification'
-//   });
-
-//   // This should be swapped out by the notificationclick event
-//   notification.addEventListener('click', function() {
-//     if (clients.openWindow) {
-//       console.log('Notification clicked, trying to call clients.openWindow');
-//       clients.openWindow('https://gauntface.com/blog/2014/12/15/push-notifications-service-worker');
-//     } else {
-//       console.log('Notification clicked, but clients.openWindow is not currently supported');
-//     }
-//   });
-
-//   return notification;
-// });
-
-// self.addEventListener('pushsubscriptionlost', function(e) {
-//   console.log(e);
-// });
-
-// self.addEventListener('notificationclick', function(e) {
-//   console.log('Notification click yo.');
-
-//   if (clients.openWindow) {
-//     clients.openWindow('https://gauntface.com/blog/2014/12/15/push-notifications-service-worker');
-//   } else {
-//     console.log('Notification clicked, but clients.openWindow is not currently supported');
-//   }
-});
+'use strict'; 
  
-=======
+var YAHOO_WEATHER_API_ENDPOINT = 'https://query.yahooapis.com/' +
+  'v1/public/yql?q=select%20*%20from%20weather.forecast%20where%' +
+  '20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where' +
+  '%20text%3D%22london%2C%20uk%22)&format=json&env=store%3A%2F%2' +
+  'Fdatatables.org%2Falltableswithkeys';
+var KEY_VALUE_STORE_NAME = 'key-value-store';
 
-}else{
-      notifi= new Notification('New message from the door',{
+var idb;
+
+// avoid opening idb until first call
+function getIdb() {
+  if (!idb) {
+    idb = new IndexDBWrapper('key-value-store', 1, function(db) {
+      db.createObjectStore(KEY_VALUE_STORE_NAME);
+    });
+  }
+  return idb;
+}
+
+  
+   
+function showNotification(title, body, icon, data) {
+
+
+  var notificationOptions = {
+    body: body,
+    icon:icon,
+    tag: 'push-notification',
+    data: data
+  };
+  if (self.registration.showNotification) {
+    self.registration.showNotification(title, notificationOptions);
+    return;
+  } else {
+   
+    new Notification(title, notificationOptions);
+  }
+}
+
+self.addEventListener('push', function(event) {
+  // Since this is no payload data with the first version
+  // of Push notifications, here we'll grab some data from
+  // an API and use it to populate a notification
+  event.waitUntil(
+    fetch(YAHOO_WEATHER_API_ENDPOINT).then(function(response) {
+      var notifi;
+        notifi= new Notification('New message from the door',{
         body: 'Please go open the door',
         icon: './../../assets/images/message.png'
 
@@ -115,8 +56,24 @@ if(Notification.permission === 'default'){
         alert("Im comming :P");
 
         }
-      }
+    }).catch(function(err) {
+      console.error('Unable to retrieve data', err);
+      
+   var title = 'Doorbell';
+      var message = 'Please open the door';
+      var icon ='message.png'
+      return showNotification(title, message,icon);
+    })
+  );
+});
 
+self.addEventListener('notificationclick', function(event) {
+  console.log('On notification click: ', event);
+  
+    
+    
+      //router.GET().route("/sound").with(AppController.class, "sound");
+      return clients.openWindow("/history");
+ 
 
-}); 
->>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
+});

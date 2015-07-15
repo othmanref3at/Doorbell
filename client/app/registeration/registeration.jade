@@ -1,39 +1,3 @@
-<<<<<<< HEAD
-
-link(href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600", rel="stylesheet", type="text/css")
-link(href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css", rel="stylesheet")
-.testbox
-  h1 Registration
-  form(role='form')
-    hr
-     
-    hr
-    label#icon(for="name")
-      i.icon-envelope
-    input#name(type='text', name='InputName',ng-model="name", placeholder='Enter Name', required='')
-    label#icon(for="name")
-      i.icon-user
-    input#name(type='text', name='InputName',ng-model="phone", placeholder='Enter Phone-Number', required='')
-    label#icon(for="name")
-      i.icon-shield 
-     
-    input#name(type='text', name='InputEmail',ng-model="email", placeholder='Enter Email', required='')
-     
-<<<<<<< HEAD
-<<<<<<< HEAD
-    a.button(type='submit',ng-click="add()", name='submit', value='Register') Register
-=======
-    a.button(type='submit',ng-click="main()", name='submit', value='Register') Register
->>>>>>> 219b05167ee31d15c2be83bc8b2cef3258a7935d
-=======
-    a.button(type='submit',ng-click="add();retrive();setCookies();update()", name='submit', value='Register') Register
-=======
-  
-    a.button(type='submit',ng-click="add();retrive();setCookies()", name='submit', value='Register') Register
- 
->>>>>>> 579f207bb0eae8bfdd3b8349cc30a8e98b8ce8e3
->>>>>>> c5f388da45ccb059d5090732986fe2a2b53d1763
-=======
 link(href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600", rel="stylesheet", type="text/css")
 link(href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css", rel="stylesheet")
 .RegPage
@@ -50,13 +14,12 @@ link(href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css", r
       br
       label#icon(for="name")
         i.icon-shield  
-      input#name(type='text', name='InputName',ng-model="phone", placeholder='Enter Phone-Number', required='')
+      input#name(type='Phone-Number', name='InputPhone-Number',ng-model="phone", placeholder='Enter Phone-Number',ng-pattern="/0-9/", required='')
       br
       label#icon(for="name")
         i.icon-envelope 
-      input#name(type='text', name='InputEmail',ng-model="email", placeholder='Enter Email', required='')
+      input#name(type='email', name='InputEmail',ng-model="email", placeholder='Enter Email',ng-minlength=13, required='')
       br
       br 
-      a.button(type='submit',ng-click="main();retrive();setCookies()", name='submit', value='Register') Register
-      
->>>>>>> f55d3478115e7ad26e1b721152ca967c525f4433
+      a.button(type='submit',ng-click="main()", name='submit', value='Register') Register
+ 
