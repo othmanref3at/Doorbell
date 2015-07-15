@@ -1,11 +1,8 @@
 'use strict';
 
 angular.module('doorbellApp')
-<<<<<<< HEAD
- 
   .controller('MainpageCtrl', function($firebase, $scope , $window) {
  
-
     $scope.test = 'hello';
     $scope.snap = {};
 
