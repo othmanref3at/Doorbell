@@ -1,25 +1,20 @@
 link(href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600", rel="stylesheet", type="text/css")
 link(href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css", rel="stylesheet")
-.RegPage
-  .testbox
-    br
-    br
-    h1 Registration
-    form(role='form')
-       
-      hr
-      label#icon(for="name")
-        i.icon-user
-      input#name(type='text', name='InputName',ng-model="name", placeholder='Enter Name', required='')  
-      br
-      label#icon(for="name")
-        i.icon-shield  
-      input#name(type='Phone-Number', name='InputPhone-Number',ng-model="phone", placeholder='Enter Phone-Number',ng-pattern="/0-9/", required='')
-      br
-      label#icon(for="name")
-        i.icon-envelope 
-      input#name(type='email', name='InputEmail',ng-model="email", placeholder='Enter Email',ng-minlength=13, required='')
-      br
-      br 
-      a.button(type='submit',ng-click="main()", name='submit', value='Register') Register
- 
+.testbox
+  h1 Registration
+  form(role='form')
+    hr
+     
+    hr
+    label#icon(for="name")
+      i.icon-envelope
+    input#name(type='text', name='InputName',ng-model="name", placeholder='Enter Name', required='')
+    label#icon(for="name")
+      i.icon-user
+    input#name(type='text', name='InputName',ng-model="phone", placeholder='Enter Phone-Number', required='')
+    label#icon(for="name")
+      i.icon-shield 
+     
+    input#name(type='text', name='InputEmail',ng-model="email", placeholder='Enter Email', required='')
+     
+    a.button(type='submit',ng-click="main()", name='submit', value='Register') Register
