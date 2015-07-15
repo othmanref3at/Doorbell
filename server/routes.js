@@ -22,18 +22,4 @@ module.exports = function(app) {
     .get(function(req, res) {
       res.sendfile(app.get('appPath') + '/index.html');
     });
-    
-
-
-
-    //change state according session *******************************------------------
-  //app.config(function($stateProvider){
-
-    //.state('app'{
-      //abstract:true,
-      //data:{
-        //requireRegister:true;
-      //}
-    //});
-  //});  
 };

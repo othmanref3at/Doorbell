@@ -2,7 +2,7 @@
 
 angular.module('doorbellApp')
   .controller('MainpageCtrl', function($firebase, $scope , $window) {
- 
+
     $scope.test = 'hello';
     $scope.snap = {};
 
@@ -38,4 +38,3 @@ angular.module('doorbellApp')
      $window.location.href = 'login'
     }
   });
- 
