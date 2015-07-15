@@ -29,7 +29,7 @@ app.controller('RegisterationCtrl', function($firebase, $scope, $auth, $cookies,
     $scope.main = function() {
         //add employee info to DB ..
         var ref = new Firebase("https://doorbellyamsafer.firebaseio.com//EMPLOYEE");
-        var uid = ref.child(encodeURIComponent($scope.email).replace('.', '%2E')).set({
+       var uid = ref.child(encodeURIComponent($scope.email).replace('.', '%2E')).set({
             email: $scope.email,
             name: $scope.name,
             phone: $scope.phone,
@@ -60,8 +60,8 @@ app.controller('RegisterationCtrl', function($firebase, $scope, $auth, $cookies,
     };
 
     //redirect to subscription page if there is cookies for user
-    // if (typeof(mycookie) != 'undefined') {
-    //     $location.path('subscription');
-    // }
+    if (typeof(mycookie) != 'undefined') {
+        $location.path('subscription');
+    }
 
 });
