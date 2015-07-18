@@ -7,18 +7,17 @@ var app = angular.module('doorbellApp', [
     'ui.router',
     'ui.bootstrap',
     'firebase',
-    'satellizer'
+    'satellizer',
+    'ngAnimate'
+
+   
     //'LocalStorageModule'
 
 
 ])
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $authProvider) {
     $urlRouterProvider
-        .otherwise('/');
-        
-        
-        
-
+        .otherwise('/Homepage');
 
     $locationProvider.html5Mode(true);
     //FACEbook
@@ -86,6 +85,41 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $auth
 
  
 });
+app.controller('HomepageCtrl', function($scope,$state) {
+$scope.changeState =function(){
+$state.go
+}
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.run(function($rootScope, $state, $location) {
 

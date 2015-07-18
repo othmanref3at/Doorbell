@@ -1,0 +1,9 @@
+.container.slider
+  img.slide.slide-animation.nonDraggableImage(ng-repeat="slide in slides", ng-swipe-right="nextSlide()", ng-swipe-left="prevSlide()", ng-hide="!isCurrentSlideIndex($index)", ng-src="{{slide.image}}")
+  a.arrow.prev(href="#", ng-click="nextSlide()")
+  a.arrow.next(href="#", ng-click="prevSlide()")
+  nav.nav
+    .wrapper
+      ul.dots
+        li.dot(ng-repeat="slide in slides")
+          a(href="#", ng-class="{'active':isCurrentSlideIndex($index)}", ng-click="setCurrentSlideIndex($index);") {{slide.description}}

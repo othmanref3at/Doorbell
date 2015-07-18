@@ -7,7 +7,7 @@ angular.module('doorbellApp')
 		var PUSH_SERVER_URL = 'https://console.developers.google.com/project/doorbell-984';
 
 		//get cookie and encode it 
-		var cookieTest = $cookieStore.get('currentUser');
+		var cookieTest = $cookies.get('currentUser');
 		console.log(encodeURIComponent(cookieTest).replace('.', '%2E'));
 
 		console.log(cookieTest);

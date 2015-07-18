@@ -24,7 +24,12 @@ app.controller('RegisterationCtrl', function($firebase, $scope, $auth, $cookies,
     encodeURI(forbiddenChars); //results in ".%24%5B%5D%23%2F"
     encodeURIComponent(forbiddenChars); //results in ".%24%5B%5D%23%2F"
 
+    $scope.remove=function(){
+        $cookies.remove('currentUser');
+        console.log("remove done");
+        console.log($cookies.get('currentUser'));
 
+    };
     //main function which add emplyee to the DB
     $scope.main = function() {
         //add employee info to DB ..
@@ -52,16 +57,16 @@ app.controller('RegisterationCtrl', function($firebase, $scope, $auth, $cookies,
 
 
         //set cookies
-        $cookieStore.put('currentUser', $scope.currentUser.email);
+        $cookies.put('currentUser', $scope.currentUser.email);
         //retrive cookies
-        var mycookie = $cookieStore.get('currentUser');
+        var mycookie = $cookies.get('currentUser');
         console.log(mycookie);
         console.log(typeof(mycookie));
     };
-
+console.log($cookies.get('currentUser'));
     //redirect to subscription page if there is cookies for user
-    if (typeof(mycookie) != 'undefined') {
-        $location.path('subscription');
-    }
+    // if (typeof($cookies.get('currentUser')) != 'undefined') {
+    //     $location.path('subscription');
+    // }
 
 });
