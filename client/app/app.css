@@ -40,6 +40,8 @@
 .navbar {
     
     background-color: #3a57af;
+    margin-bottom: 200px;
+    padding-bottom: auto;
 }
 navbar.a{
     font-color:#C2B280;

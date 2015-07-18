@@ -10,7 +10,7 @@ var app = angular.module('doorbellApp', [
     'satellizer',
     'ngAnimate'
 
-   
+
     //'LocalStorageModule'
 
 
@@ -83,60 +83,35 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $auth
         }
     });
 
- 
-});
-app.controller('HomepageCtrl', function($scope,$state) {
-$scope.changeState =function(){
-$state.go
-}
-
-
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 app.run(function($rootScope, $state, $location) {
 
-    // $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
-
-    //     if ((typeof($rootScope.currentUser)) === 'undefined') {
-    //         $location.path('registeration');
-    //         console.log($rootScope.currentUser);
-
-    //     } else {
-    //         console.log("currentUser defined");
+    
 
 
-    //         $location.path('test22');
-    //         console.log($rootScope.currentUser);
-    //     }
+    $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
 
 
-    // });
+        // $scope.goHome = function() {
+        //       console.log("Homepagetest")
+        //         $state.go("Homepage");
+        //     }
+        // if ((typeof($rootScope.currentUser)) === 'undefined') {
+        //     $location.path('registeration');
+        //     console.log($rootScope.currentUser);
+
+        // } else {
+        //     console.log("currentUser defined");
+
+
+        //     $location.path('test22');
+        //     console.log($rootScope.currentUser);
+        // }
+
+
+    });
 });
