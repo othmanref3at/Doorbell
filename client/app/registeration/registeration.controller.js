@@ -3,7 +3,7 @@
 //create our angular module and anject firebase 
 var app = angular.module('doorbellApp')
 
-app.controller('RegisterationCtrl', function($firebase, $scope, $auth, $cookies, $location, $cookieStore) {
+app.controller('RegisterationCtrl', function($firebase,$timeout, $scope, $auth, $cookies, $location, $cookieStore) {
     $scope.authenticate = function(provider) {
         $auth.authenticate(provider);
         console.log($auth.authenticate(provider));
@@ -24,7 +24,7 @@ app.controller('RegisterationCtrl', function($firebase, $scope, $auth, $cookies,
     encodeURI(forbiddenChars); //results in ".%24%5B%5D%23%2F"
     encodeURIComponent(forbiddenChars); //results in ".%24%5B%5D%23%2F"
 
-    $scope.remove=function(){
+    $scope.remove = function() {
         $cookies.remove('currentUser');
         console.log("remove done");
         console.log($cookies.get('currentUser'));
@@ -62,11 +62,31 @@ app.controller('RegisterationCtrl', function($firebase, $scope, $auth, $cookies,
         var mycookie = $cookies.get('currentUser');
         console.log(mycookie);
         console.log(typeof(mycookie));
-    };
-console.log($cookies.get('currentUser'));
-    //redirect to subscription page if there is cookies for user
-    // if (typeof($cookies.get('currentUser')) != 'undefined') {
-    //     $location.path('subscription');
-    // }
 
+
+        nextpage();
+    };
+
+    // invoke next slide function every 3 second
+    var timer;
+    var nextpage = function() {
+        timer = $timeout(function() {
+            $scope.gonext();
+            timer = $timeout(nextpage, 4000);
+        }, 4000);
+    };
+
+    console.log($cookies.get('currentUser'));
+    /*redirect to subscription page if there is cookies for user 
+    after timeout end when user first regiter*/
+    $scope.gonext = function() {
+        if (typeof($cookies.get('currentUser')) != 'undefined') {
+            $location.path('subscription');
+        }
+    };
+
+   // redirect to subscription page if there is cookies for user 
+    if (typeof($cookies.get('currentUser')) != 'undefined') {
+            $location.path('subscription');
+        }
 });
