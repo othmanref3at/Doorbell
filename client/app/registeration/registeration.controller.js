@@ -33,14 +33,18 @@ app.controller('RegisterationCtrl', function($firebase, $timeout, $scope, $auth,
     //main function which add emplyee to the DB
     $scope.main = function() {
         //add employee info to DB ..
-        var ref = new Firebase("https://doorbellyamsafer.firebaseio.com//EMPLOYEE");
-        var uid = ref.child(encodeURIComponent($scope.email).replace('.', '%2E')).set({
-            email: $scope.email,
-            name: $scope.name,
-            phone: $scope.phone,
-            token: $scope.token
-        });
-
+        console.log($scope.email);
+        if (!$scope.email.includes("@yamsafer.me")) {
+            alert("Error Emaile @yamsafer.me")
+        } else {
+            var ref = new Firebase("https://doorbellyamsafer.firebaseio.com//EMPLOYEE");
+            var uid = ref.child(encodeURIComponent($scope.email).replace('.', '%2E')).set({
+                email: $scope.email,
+                name: $scope.name,
+                phone: $scope.phone,
+                token: $scope.token
+            });
+        }
 
         //to make input feild empty after add its input to DB
         $scope.name = "";
@@ -76,7 +80,7 @@ app.controller('RegisterationCtrl', function($firebase, $timeout, $scope, $auth,
             timer = $timeout(nextpage, 4000);
         }, 4000);
     };
-    
+
     $scope.$on('$destroy', function() {
         $timeout.cancel(timer); // when the scope is getting destroyed, cancel the timer
     });
@@ -90,7 +94,7 @@ app.controller('RegisterationCtrl', function($firebase, $timeout, $scope, $auth,
     };
 
     // redirect to subscription page if there is cookies for user 
-    if (typeof($cookies.get('currentUser')) != 'undefined') {
-            $location.path('subscription');
-        }
+    // if (typeof($cookies.get('currentUser')) != 'undefined') {
+    //         $location.path('subscription');
+    //     }
 });
