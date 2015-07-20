@@ -85,7 +85,7 @@ app.controller('RegisterationCtrl', function($firebase,$timeout, $scope, $auth, 
         }
     };
 
-   // redirect to subscription page if there is cookies for user 
+  // redirect to subscription page if there is cookies for user 
     // if (typeof($cookies.get('currentUser')) != 'undefined') {
     //         $location.path('subscription');
     //     }
