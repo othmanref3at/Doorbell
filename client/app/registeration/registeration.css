@@ -60,7 +60,7 @@ hr{
   color: #a9a9a9;
   opacity: 0.3;
 }
-input[type=text],input[type=PhoneNumber]{
+input[type=text],input[type=password],input[type=email],input[type=Phone-Number]{
   width: 200px; 
   height: 39px; 
    border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
@@ -130,17 +130,3 @@ a.button:hover {
   right:3%;
   top:0px;
 }
-
-
-/*@mixin disable{
-  outline:none;
-  border:none;
-}
-
-@mixin easeme{
-  -webkit-transition:1s ease;
-  -moz-transition:1s ease;
-  -o-transition:1s ease;
-  -ms-transition:1s ease;
-  transition:1s ease;
-}*/

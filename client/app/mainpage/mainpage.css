@@ -1,4 +1,4 @@
-table{width:80%;border:1px solid #ccc;border-collapse:collapse; margin-left: 100px; margin-top: 40px;}
+table{overflow-y: scroll;width:80%;border:1px solid #ccc;border-collapse:collapse; margin-left: 100px; margin-top: 40px;}
 table th,
 table td{border:1px solid #ddd;border-width:1px 0;padding:5px 10px;font-size:17px}
  
@@ -14,6 +14,8 @@ table tfoot th{text-align: right;}
 .pagemain{
 background-color: #F8F8F8;
 margin-top: 100px;
+  width: 1400px;
+  overflow: scroll;
 
 }
 
@@ -21,6 +23,7 @@ margin-top: 100px;
 
   margin-top: 30px;
   margin-left: 100px;
+
 }
 
 #edit{

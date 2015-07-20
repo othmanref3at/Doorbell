@@ -1,6 +1,7 @@
-table{width:80%;border:1px solid #ccc;border-collapse:collapse; margin-left: 100px; margin-top: 40px;}
+table{overflow:scroll;width:120%;border:1px solid #ccc;border-collapse:collapse; margin: auto;margin-top: 40px;}
 table th,
-table td{border:1px solid #ddd;border-width:1px 0;padding:5px 10px;font-size:17px}
+table td{border:1px solid #ddd;border-width:1px 0;padding:5px 10px;font-size:17px;margin:auto;margin-left: 40px;
+}
  
 table thead td{background-color: #6495ED;}
 table tbody tr:nth-child(odd){background-color:#e5e5e5}
@@ -14,6 +15,7 @@ table tfoot th{text-align: right;}
 .pageHistory{
 background-color: #F8F8F8;
 margin-top: 100px;
+width: 1400px;
 
 }
 

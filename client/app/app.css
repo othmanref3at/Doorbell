@@ -38,14 +38,21 @@
     padding: 0.2em 0;
 }
 .navbar {
-    
-    background-color: #3a57af;
+    background-color: #6495ED;
+
     margin-bottom: 200px;
-    padding-bottom: auto;
+    padding-bottom: 8px;
+
 }
-navbar.a{
-    font-color:#C2B280;
+.navbar-brand{
+    vertical-align: top;
 }
+
 .navbar-inverse .navbar-nav  li a {
-color: #ffff00;
+    color: #ffffff;
+    vertical-align: center;
+
+}
+.navbar-inverse .navbar-nav  li a:hover {
+color:#B6B6B4;
 }

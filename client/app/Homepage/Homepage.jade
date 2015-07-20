@@ -7,3 +7,4 @@
       ul.dots
         li.dot(ng-repeat="slide in slides")
           a(href="#", ng-class="{'active':isCurrentSlideIndex($index)}", ng-click="setCurrentSlideIndex($index);") {{slide.description}}
+

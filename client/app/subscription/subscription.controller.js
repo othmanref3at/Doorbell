@@ -25,7 +25,7 @@ angular.module('doorbellApp')
 
 		// Check service workers are supported
 		if (!('serviceWorker' in navigator)) {
-			showError('Ooops No Service Worker found', 'This is most likely down ' +
+			console.log('Ooops No Service Worker found', 'This is most likely down ' +
 				'to the site being run in a browser without service worker support. ' +
 				'Make sure you are in Chrome M40 above (See chrome://version).');
 			return;
@@ -37,7 +37,7 @@ angular.module('doorbellApp')
 		}).then(function(serviceWorkerRegistration) {
 			// Check if this service worker supports push
 			if (!serviceWorkerRegistration.pushManager) {
-				showError('Ooops Push Isn\'t Supported', 'This is most likely ' +
+				console.log('Ooops Push Isn\'t Supported', 'This is most likely ' +
 					'down to the current browser doesn\'t have support for push. ' +
 					'Try Chrome M41.');
 				return;
@@ -54,7 +54,7 @@ angular.module('doorbellApp')
 			})
 			.catch(function(err) {
 				// Registration failed :(
-				showError('Ooops a Service Worker Error', 'Whilst registering the  ' +
+				console.log('Ooops a Service Worker Error', 'Whilst registering the  ' +
 					'service worker, something caused an error and resulting in the ' +
 					'service worker not getting installed. #NeedsABugFix.');
 			});
@@ -67,24 +67,11 @@ angular.module('doorbellApp')
 		}
 
 
-		function showError(title, message) {
-			var buttonContainer = document.querySelector('.button-container');
-			buttonContainer.style.display = 'none';
-
-			var errorContainer = document.querySelector('.error-container');
-			var titleElement = errorContainer.querySelector('.title');
-			var messageElement = errorContainer.querySelector('.message');
-			titleElement.innerHTML = title;
-			messageElement.innerHTML = message;
-			errorContainer.style.display = 'block';
-		}
-
-
 		//check if notification are supported or not 
 		function requestNotificationPermission() {
 			console.log("1) requestNotificationPermission");
 			if (!Notification) {
-				showError('Ooops Notifications Not Supported');
+				console.log('Ooops Notifications Not Supported');
 				return;
 			}
 		}
@@ -101,7 +88,7 @@ angular.module('doorbellApp')
 					})
 					.catch(function(e) {
 						console.error('Unable to register for push', e);
-						showError('Ooops Push Couldn\'t Register', 'When we tried to ' +
+						console.log('Ooops Push Couldn\'t Register', 'When we tried to ' +
 							'get the registration ID for GCM, something went wrong, not ' +
 							'sure why. Check the console to see the error.');
 					});

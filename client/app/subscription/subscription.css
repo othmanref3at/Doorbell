@@ -18,9 +18,21 @@
 input[type=radio] {
     display: none;
 }
- 
+html{
+  background-color: #F8F8F8  ;
+}  
 .radio .ll:before {
     border-radius: 8px;
+
+}
+.subscribebox{
+  margin: auto;
+  width: 480px; 
+  height: 300px;    
+  border-radius: 8px/7px; 
+  background-color: #ebebeb;  
+  box-shadow: 3px 4px 7px rgba(0,0,0,.31); 
+  border: solid 2px #cbc9c9;
 
 }
 .ll{
@@ -61,10 +73,11 @@ input[type=radio]:checked + .ll:before {
   font-family:Verdana, Arial, Helvetica, sans-serif;
   color: #4D6B99;
   padding: 6px 25px 0px 20px;
+  
   margin: 40px 8px 20px 0px;
   display: inline-block;
   text-decoration: none;
-  width: 160px; height: 40px; 
+  width: 420px; height: 40px; 
   border-radius: 5px; 
   background-color: #ebebeb;   
   top: 0px;
@@ -79,4 +92,7 @@ input[type=radio]:checked + .ll:before {
   -moz-box-shadow: none; 
   box-shadow: none;
   
+}
+.pragraphh{
+  background-color: #ffffff;
 }

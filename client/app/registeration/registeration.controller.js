@@ -3,7 +3,7 @@
 //create our angular module and anject firebase 
 var app = angular.module('doorbellApp')
 
-app.controller('RegisterationCtrl', function($firebase,$timeout, $scope, $auth, $cookies, $location, $cookieStore) {
+app.controller('RegisterationCtrl', function($firebase, $timeout, $scope, $auth, $cookies, $location, $cookieStore) {
     $scope.authenticate = function(provider) {
         $auth.authenticate(provider);
         console.log($auth.authenticate(provider));
@@ -63,19 +63,23 @@ app.controller('RegisterationCtrl', function($firebase,$timeout, $scope, $auth, 
         console.log(mycookie);
         console.log(typeof(mycookie));
 
-
         nextpage();
+
     };
 
-    // invoke next slide function every 3 second
+    // invoke gonext function to go to  subscription page after  3 second from registration
     var timer;
     var nextpage = function() {
+        console.log('hello timer');
         timer = $timeout(function() {
             $scope.gonext();
             timer = $timeout(nextpage, 4000);
         }, 4000);
     };
-
+    
+    $scope.$on('$destroy', function() {
+        $timeout.cancel(timer); // when the scope is getting destroyed, cancel the timer
+    });
     console.log($cookies.get('currentUser'));
     /*redirect to subscription page if there is cookies for user 
     after timeout end when user first regiter*/
@@ -85,7 +89,7 @@ app.controller('RegisterationCtrl', function($firebase,$timeout, $scope, $auth, 
         }
     };
 
-  // redirect to subscription page if there is cookies for user 
+    // redirect to subscription page if there is cookies for user 
     // if (typeof($cookies.get('currentUser')) != 'undefined') {
     //         $location.path('subscription');
     //     }
